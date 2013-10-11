@@ -1,4 +1,4 @@
-package models;
+package db.models;
 
 public class IssueType {
 	private String description;
