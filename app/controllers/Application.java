@@ -1,15 +1,13 @@
 package controllers;
 
-import play.mvc.Controller;
-import play.mvc.Result;
-import views.html.index;
-import views.html.heatmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
 import play.mvc.Result;
+import views.html.heatmap;
 import views.html.index;
+
 
 @Controller
 public class Application extends FixItBaseController {
