@@ -11,6 +11,6 @@ public class Application extends Controller {
     }
 
     public static Result heatmap() {
-        return ok(map.render());
+        return ok(heatmap.render());
     }
 }
