@@ -1,0 +1,14 @@
+
+
+@main("Heat Map") {
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=visualization"></script>
+    <script type="text/javascript" src='@routes.Assets.at("javascripts/googleMaps.js")'></script>
+    <link type="text/css" href='@routes.Assets.at("stylesheets/googleMaps.css")' />
+
+    <script>
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <div id="map-canvas"></div>
+}

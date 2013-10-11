@@ -10,8 +10,7 @@ public class Application extends Controller {
         return ok(index.render("Your mom's new application is ready."));
     }
 
-    public static Result test() {
-        return ok(test.render("Test"));
+    public static Result heatmap() {
+        return ok(map.render());
     }
-
 }
