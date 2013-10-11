@@ -1,5 +1,5 @@
 var map,
-    pointarray,
+    pointArray,
     heatmap,
     initialLocation,
     browserSupportFlag =  new Boolean();
@@ -8,7 +8,7 @@ var taxiData = [];
 
 function initialize() {
     var mapOptions = {
-        zoom: 13,
+        zoom: 17,
         center: new google.maps.LatLng(37.774546, -122.433523),
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };
@@ -16,7 +16,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-    var pointArray = new google.maps.MVCArray(taxiData);
+    pointArray = new google.maps.MVCArray(taxiData);
 
     heatmap = new google.maps.visualization.HeatmapLayer({
         data: pointArray
@@ -33,7 +33,7 @@ function initialize() {
             var infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: pos,
-                content: 'Location found using HTML5.'
+                content: 'Your location'
             });
 
             map.setCenter(pos);
