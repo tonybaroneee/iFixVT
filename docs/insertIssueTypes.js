@@ -4,5 +4,7 @@ db.IssueType.insert([
   {"description":"Grafitti"},
   {"description":"Undetermined"},
   {"description":"Downed Powerline"},
-  {"description":"Abandoned Bicycle"}
+  {"description":"Abandoned Bicycle"},
+  {"description":"Washed out Culvert"},
+  {"description":"Frostheave"}
 ]);
