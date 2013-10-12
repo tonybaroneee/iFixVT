@@ -13,7 +13,7 @@ var views = {
 var activeView = views.BASIC;
 var pointArray;
 var lastInfoWindow = null;
-var vermontCenter = new google.maps.LatLng(43.77716516064871, -72.39696075703125);
+var vermontCenter = new google.maps.LatLng(44.67716516064871, -72.39696075703125);
 var markersArray = [];
 
 function changeView(view)  {
@@ -118,7 +118,7 @@ function attachMarkerInfo(marker, number) {
                 lastInfoWindow.close();
             var popupContent = "";
             popupContent += (data.image) ? "<img id='popup-info-image' src='"+data.image+"' />" : "";
-            popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>type</div>" : "";
+            popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>"+issueTypeMap[data.issueTypeId].description + " in " + data.townName + "</div>" : "";
 
             var infowindow = new google.maps.InfoWindow(
                 {
@@ -135,7 +135,7 @@ function attachMarkerInfo(marker, number) {
 function initialize() {
     if(firstLoad) {  // may want to get this working so it doesn't flash when reloading
         var mapOptions = {
-            zoom: firstLoad? 8 : map.getZoom(),
+            zoom: firstLoad? 10 : map.getZoom(),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: firstLoad ? vermontCenter : map.getCenter(),
             streetViewControl: false,

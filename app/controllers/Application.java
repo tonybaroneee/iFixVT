@@ -62,7 +62,7 @@ public class Application extends FixItBaseController {
     	//_issueService.save(issue);
     	
     	Town town = townRepository.findOneByName("Burlington");
-    	if(false){
+    	if(true){
     	for(Issue it : issueRepository.findAll()) {
     		if(it.getTownName() == null || "".equals(it.getTownName())) {
 	    		it.setTownName(googleService.getTownNameByLatLong(it.getLatitude(), it.getLongitude()));
@@ -77,8 +77,9 @@ public class Application extends FixItBaseController {
     		}
     	}
     	}
+//    	String result = googleService.getTownNameByLatLong(44.429857,-71.686006);
 //    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
 //    	googleService.getLatLngForTowns();
-    	return ok("BLAH");
+    	return ok("FUCK YEAH");
     }
 }

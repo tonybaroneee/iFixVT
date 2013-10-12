@@ -35,6 +35,7 @@ app.service("IssueService", function() {
     that.issueTypeMap = {};
     $.get('/issue/issueTypeMap', function(data) {
         that.issueTypeMap = angular.fromJson(data);
+        issueTypeMap = angular.fromJson(data);
     });
     this.getIssueTypeMap = function() {
         return that.issueTypeMap;
@@ -143,7 +144,7 @@ app.controller('AddIssueController', ['$scope', '$http', function($scope, $http)
             type: 'post'
         }).done(function(data) {
             // file is uploaded successfully
-            console.log(data);
+            $('#save-success').modal('show');
         });
     };
 }]);
