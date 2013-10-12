@@ -28,6 +28,10 @@ public class IssueController extends FixItBaseController {
 	public Result saveIssue() {
 
 		DynamicForm form = Form.form().bindFromRequest();
+        System.out.println(form.get("lat"));
+        System.out.println(form.get("long"));
+        System.out.println(form.get("picture"));
+        System.out.println(form.get("type"));
 		Double coordLat = Double.parseDouble(form.get("lat"));
 		Double coordLong = Double.parseDouble(form.get("long"));
 		String picture = form.get("picture");
