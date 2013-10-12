@@ -30,6 +30,20 @@ app.directive('fileButton', function() {
     }
 });
 
+app.service("IssueService", function() {
+    this.issueTypeMap = {};
+    $.get('/issue/issueTypeMap', function(data) {
+        this.issueTypeMap = data;
+    });
+});
+
+app.filter('getTypeName', ['IssueService', function(IssueService) {
+    return function(id) {
+        console.log(IssueService.issueTypeMap[id].description);
+        return IssueService.issueTypeMap[id].description
+    };
+}]);
+
 app.directive('changeActive', function() {
     return function (scope, element, attrs) {
         angular.element(element).find('a').on('click', function() {
@@ -44,6 +58,14 @@ app.controller('FixItController', ['$scope', function($scope) {
     $scope.allIssueTableHead = {
 
     };
+    $scope.issues = [];
+    $scope.issueTypeMap = {};
+
+    $.get('/issue/issueTypeMap', function(data) {
+        $scope.$apply(function() {
+            $scope.issueTypeMap = data;
+        });
+    });
 
     $scope.onTownChange = function($town) {
         console.log(angular.element($town).attr('data-value'));
@@ -53,7 +75,10 @@ app.controller('FixItController', ['$scope', function($scope) {
         angular.element('#stats-modal').modal('show');
 
         $.get('/report/basic', function(data) {
-            console.log(data);
+            $scope.$apply(function() {
+                console.log(data);
+//                $scope.issues = data;
+            });
         });
     };
 

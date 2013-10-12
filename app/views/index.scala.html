@@ -68,6 +68,20 @@
                     <i class="certificate icon"></i> By Type
                 </a>
             </div>
+            <table class="ui table segment">
+                <thead>
+                <tr><th>Issue Type</th>
+                    <th>Town</th>
+                    <th>Location</th>
+                </tr></thead>
+                <tbody>
+                <tr ng-repeat="issue in issues">
+                    <td>{{ issue.issueTypeId }}</td>
+                    <td>{{ issue.townName }}</td>
+                    <td>{{ issue.latitude }}, {{ issue.longitude }}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="actions">
             <div class="ui green button" ng-click="closeModal()"><i class="icon check"></i> All Done</div>
