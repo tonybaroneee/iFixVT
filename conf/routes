@@ -13,6 +13,7 @@ GET		/report/heatMapByTown		@controllers.ReportController.heatMapByTown()
 GET		/report/issueByTown/:name	@controllers.ReportController.issueByTown(name)
 
 GET     /issue/issueTypeMap			@controllers.IssueController.issueTypeMap()
+GET		/issue/delete/:id			@controllers.IssueController.deleteIssue(id)
 
 GET     /issue/:id					@controllers.IssueController.issueById(id)
 POST    /issue/save		 			@controllers.IssueController.saveIssue

@@ -40,4 +40,8 @@ public class IssueService {
 	public List<Issue> findIssuesByTownName(String townName) {
 		return _issueRepository.findByTownNameWithoutPictures(townName);
 	}
+
+	public void delete(String id) {
+		_issueRepository.delete(id);
+	}
 }

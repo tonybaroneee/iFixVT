@@ -60,6 +60,13 @@ public class IssueController extends FixItBaseController {
 		return ok();
 	}
 
+	public Result deleteIssue(String id) {
+
+		_issueService.delete(id);
+
+		return ok();
+	}
+
 	public Result issueTypeMap() {
 		Map<String, IssueType> issueTypeMap = new HashMap<String, IssueType>();
 		for (IssueType type : _issueTypeRepository.findAll()) {
