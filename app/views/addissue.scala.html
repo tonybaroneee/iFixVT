@@ -1,20 +1,25 @@
-<div ng-controller="AddIssueController" class="ui fluid form segment">
-    <h3 class="ui dividing header"><b>Step 1:</b> <span style="color:#666;">Specify the type of issue</span></h3>
+@(towns :List[db.models.Town], issueTypes:List[db.models.IssueType])
+<div ng-controller="AddIssueController" class="ui form segment">
+    <h3 class="ui dividing header"><b>Step 1:</b> <span style="color:#666;">What's the problem?</span></h3>
     <div class="ui selection dropdown">
-        <input type="hidden" name="gender">
+        <input type="hidden" name="type" id="type" ng-model="type">
         <i class="dropdown icon"></i>
-        <div class="default text">Gender</div>
+        <div class="default text">Select an issue...</div>
         <div class="menu">
-            <div class="item" data-value="male">Male</div>
-            <div class="item" data-value="female">Female</div>
+            @for(issueType <- issueTypes) {
+                <div class="item" ng-click="onTypeChange(this)" data-value="@issueType.getId()" value="@issueType.getId()">@issueType.getDescription()</div>
+            }
         </div>
     </div>
 
     <h3 class="ui dividing header"><b>Step 2:</b> <span style="color:#666;">Where are you?</span></h3>
-    <button ng-click="setLocation()" ng-show="!locationSet" class="ui button">Get my location</button>
-    <p ng-show="locationSet" class="green"><i class="icon check"></i> Location has been set!</p>
+    <button ng-click="setLocation()" ng-show="!locationSet" class="ui button blue">Get my location</button>
+    <p ng-show="locationSet" style="color:green;font-weight:bold;"><i class="icon check"></i> Location has been set!</p>
 
-    <h3 class="ui dividing header"><b>Step 3:</b> <span style="color:#666;">Set an image</span></h3>
-    <input type="file" ng-file-select="onFileSelect($files)" >
-    <button ng-click="saveIssue()" class="ui blue submit button">Submit</button>
+    <h3 class="ui dividing header"><b>Step 3:</b> <span style="color:#666;">Attach a photo</span></h3>
+    <div file-button class="upload-btn-wrap">
+        <button class='ui teal button'><i class="icon camera"></i> Take picture</button>
+    </div>
+
+    <button ng-click="saveIssue()" class="ui green submit button" style="margin-top:20px;display:block;width:100%;">Submit</button>
 </div>
