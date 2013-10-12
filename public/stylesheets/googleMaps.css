@@ -4,5 +4,17 @@ div#map-canvas {
 }
 
 div#action-box {
+    position: absolute;
+    right: 25px;
+    top: 50px;
+    padding: 10px;
+    background-color: rgba(25,25,25,0.4);
+    border: #333 outset 1px;
+}
 
+.ifixvt-button {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
 }
