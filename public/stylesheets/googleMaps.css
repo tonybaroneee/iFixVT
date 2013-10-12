@@ -7,7 +7,7 @@ div#map-canvas {
 div#action-box {
     position: absolute;
     right: 25px;
-    top: 100px;
+    top: 60px;
     padding: 10px;
     background-color: rgba(25,25,25,0.4);
     border-radius: 4px;
