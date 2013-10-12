@@ -46,6 +46,10 @@ function initialize() {
     }
 } // initialize
 
+function addPoint(lat, long) {
+    pointArray.push(new LatLng(lat,long));
+}
+
 function handleNoGeolocation(errorFlag) {
     if (errorFlag) {
         var content = 'Error: The Geolocation service failed.';
