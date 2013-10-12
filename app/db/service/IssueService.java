@@ -44,4 +44,8 @@ public class IssueService {
 	public void delete(String id) {
 		_issueRepository.delete(id);
 	}
+
+	public List<Issue> findIssuesByTypeId(String id) {
+		return _issueRepository.findIssuesByTypeIdWithoutPictures(id);
+	}
 }

@@ -83,11 +83,16 @@ public class ReportController extends FixItBaseController {
 		}
 		return okAsJSON(heatMap);
 	}
-	
-	
+
+	public Result issueByTypeId(String id) {
+		List<Issue> issues = _issueService.findIssuesByTypeId(id);
+		return okAsJSON(issues);
+
+	}
+
 	public Result issueByTown(String name) {
 		List<Issue> issues = _issueService.findIssuesByTownName(name);
 		return okAsJSON(issues);
 	}
-	
+
 }

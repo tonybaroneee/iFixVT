@@ -9,8 +9,8 @@ GET     /report/basic               @controllers.ReportController.basic()
 GET     /report/basicHeatMap		@controllers.ReportController.basicHeatMap()
 GET		/report/heatMapByTown		@controllers.ReportController.heatMapByTown()
 
-
 GET		/report/issueByTown/:name	@controllers.ReportController.issueByTown(name)
+GET		/report/issueByType/:id		@controllers.ReportController.issueByTypeId(id)
 
 GET     /issue/issueTypeMap			@controllers.IssueController.issueTypeMap()
 GET		/issue/delete/:id			@controllers.IssueController.deleteIssue(id)
@@ -23,6 +23,3 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Upload
 GET     /upload                     @controllers.Application.upload()
-
-
-

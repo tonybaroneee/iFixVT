@@ -22,4 +22,7 @@ public interface IssueRepository extends MongoRepository<Issue, String> {
 	@Query(value="{townName: ?0}", fields= "{ image: 0 }")
 	List<Issue> findByTownNameWithoutPictures(String townName);
 
+	@Query(value="{issueTypeId: ?0}", fields= "{ image: 0 }")
+	List<Issue> findIssuesByTypeIdWithoutPictures(String id);
+
 }
