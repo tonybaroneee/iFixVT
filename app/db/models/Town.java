@@ -40,5 +40,11 @@ public class Town {
 	public void setPopulation(Long population) {
 		this.population = population;
 	}
+	public String getId() {
+		return id;
+	}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
 }
