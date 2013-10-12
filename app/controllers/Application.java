@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
 import play.mvc.Result;
+import service.GoogleService;
 import views.html.index;
 import views.html.phone;
 import db.models.Issue;
@@ -26,6 +27,8 @@ public class Application extends FixItBaseController {
 	@Inject
 	TownRepository townRepository;
 	
+	@Inject
+	GoogleService googleService;
 	public Result index() {
         return ok(index.render());
 	}
@@ -51,7 +54,8 @@ public class Application extends FixItBaseController {
     	
     	Town town = townRepository.findOneByName("Burlington");
     	
-    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
+//    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
+    	return ok(googleService.getTownNameByLatLong(40.714224, -73.961452));
     }
 
 }

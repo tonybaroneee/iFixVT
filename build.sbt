@@ -15,7 +15,9 @@ libraryDependencies ++= Seq(
   "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.9",
   "org.springframework" % "spring-context" % springVersion,
   "org.springframework.data" % "spring-data-mongodb" % springDataMongoVersion,
-  "org.springframework" % "spring-expression" % springVersion
+  "org.springframework" % "spring-expression" % springVersion,
+  "commons-httpclient" % "commons-httpclient" % "3.1",
+  "commons-io" % "commons-io" % "2.4"
 ) 
 
 play.Project.playJavaSettings

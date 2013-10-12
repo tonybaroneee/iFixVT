@@ -8,5 +8,6 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean class="db.service.IssueService"/>
+	<bean class="service.GoogleService"/>
 	
 </beans>
