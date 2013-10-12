@@ -1,8 +1,8 @@
 @(towns :List[db.models.Town], issueTypes:List[db.models.IssueType])
 @main("iFixVT | Viewing Issues") {
-    <div class="ui active dimmer" ng-show="pageLoading">
-        <div class="ui loader"></div>
-    </div>
+    <!--<div class="ui dimmer" ng-class="{'active':pageLoading}">-->
+        <!--<div class="ui loader"></div>-->
+    <!--</div>-->
     <div class="ui menu" style="margin: 0px;border-radius:0px;border-bottom: 1px solid #CCCCCC;position: absolute;top: 0;width: 100%;z-index: 2;">
         <div class="header item"><i class="icon stethoscope"></i>iFix<span style="color:green">VT</span></div>
         <div class="right menu" style="display: none;">
@@ -81,7 +81,7 @@
                 <tr ng-repeat="issue in issues">
                     <td>{{ issue.issueTypeId | getTypeName }}</td>
                     <td>{{ issue.townName }}</td>
-                    <td>{{ issue.latitude }}, {{ issue.longitude }}</td>
+                    <td><a href="#" ng-click="goToIssue(issue)">View on map</a></td>
                 </tr>
                 </tbody>
                 <tfoot>

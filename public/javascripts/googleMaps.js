@@ -279,9 +279,9 @@ function clearMarkers() {
     }
 }
 
-function openMarkerById(id) {
-    for (var i = 0; i < markersArray.length; i++ ) {
-        if(markersArray[i].id == id)
-            markersArray[i].click();
-    }
-}
+//function openMarkerById(id) {
+//    for (var i = 0; i < markersArray.length; i++ ) {
+//        if(markersArray[i].id == id)
+//            markersArray[i].trigger('click');
+//    }
+//}
