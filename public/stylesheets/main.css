@@ -8,3 +8,15 @@ html, body {
     margin: 0px;
 }
 
+.ui.menu .header.item:first-child {
+    font-size: 20px;
+    letter-spacing: 1px;
+    height: initial;
+    padding: 10px;
+}
+
+.ui.menu .ui.selection.dropdown {
+    top: 4px;
+    width: 130px;
+    padding: 5px 12px;
+}

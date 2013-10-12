@@ -268,13 +268,6 @@ function toggleHeatmap(turnOn) {
         heatmap.setMap(turnOn ? map : null);
 }
 
-function activateButton(btn) {
-    $( "#google-map-view-box a.item" ).each(function() {
-        $( this ).removeClass( "active" );
-    });
-    $(btn).addClass("active");
-}
-
 function changeGradient() {
     var gradient = [
         'rgba(0, 255, 255, 0)',
