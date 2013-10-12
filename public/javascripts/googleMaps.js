@@ -53,14 +53,17 @@ function loadPointArray() {
 function attachMarkerInfo(marker, number) {
     var infowindow = new google.maps.InfoWindow(
         {
-            content: "<h1>"+marker.title+"</h1>",
-            size: new google.maps.Size(50,50)
+            content: "cool",
+            size: new google.maps.Size(300,150)
         });
     google.maps.event.addListener(marker, 'click', function() {
         if(lastInfoWindow)
             lastInfoWindow.close();
         lastInfoWindow = infowindow;
+        infowindow.content = '<div class="ui segment" style="width: 100px; height: 100px;"><div class="ui active inverted dimmer"><div class="ui text loader">Loading</div></div></div>';
         infowindow.open(map,marker);
+
+
     });
 }
 
