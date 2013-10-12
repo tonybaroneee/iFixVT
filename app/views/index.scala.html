@@ -2,7 +2,7 @@
 @main("iFixVT | Viewing Issues") {
     <div class="ui menu" style="margin: 0px;border-radius:0px;border-bottom: 1px solid #CCCCCC;">
         <div class="header item"><i class="icon stethoscope"></i>iFix<span style="color:green">VT</span></div>
-        <div class="right menu">
+        <div class="right menu" style="display: none;">
             <div class="borderless vertically fitted item">
                 <!--<div class="ui icon input">-->
                 <!--<input type="text" placeholder="Search...">-->
@@ -14,12 +14,7 @@
                     <div class="default text">(All Towns)</div>
                     <div class="menu">
                         @for(town <- towns) {
-                        <div class="item" ng-click="onTypeChange(this)" data-value="@town.getId()" value="@town.getId()">@town.getName()</div>
-                        <!--private String id;-->
-                        <!--private String name;-->
-                        <!--private Double area;-->
-                        <!--private Double density;-->
-                        <!--private Long population;-->
+                            <div class="item" ng-click="onTownChange(this)" data-value="@town.getId()">@town.getName()</div>
                         }
                     </div>
                 </div>
@@ -75,8 +70,7 @@
             </div>
         </div>
         <div class="actions">
-            <div class="ui red button">Cancel</div>
-            <div class="ui green button" id="add-issue-btn">Report it!</div>
+            <div class="ui green button" ng-click="closeModal()"><i class="icon check"></i> All Done</div>
         </div>
     </div>
 

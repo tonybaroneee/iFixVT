@@ -40,9 +40,15 @@ app.directive('changeActive', function() {
 });
 
 app.controller('FixItController', ['$scope', function($scope) {
+    $scope.town = '';
     $scope.allIssueTableHead = {
 
-    }
+    };
+
+    $scope.onTownChange = function($town) {
+        console.log(angular.element($town).attr('data-value'));
+    };
+
     $scope.showStats = function() {
         angular.element('#stats-modal').modal('show');
 
@@ -50,6 +56,10 @@ app.controller('FixItController', ['$scope', function($scope) {
             console.log(data);
         });
     };
+
+    $scope.closeModal = function() {
+        angular.element('#stats-modal').modal('close');
+    }
 }]);
 
 app.controller('AddIssueController', ['$scope', '$http', function($scope, $http) {
