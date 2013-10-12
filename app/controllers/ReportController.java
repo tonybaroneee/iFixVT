@@ -15,9 +15,9 @@ import db.repositories.TownRepository;
 import db.service.IssueService;
 
 @Controller
-public class Report extends FixItBaseController {
+public class ReportController extends FixItBaseController {
 
-	private static Logger _logger = LoggerFactory.getLogger(Report.class);
+	private static Logger _logger = LoggerFactory.getLogger(ReportController.class);
 
 	@Inject
 	IssueService _issueService;

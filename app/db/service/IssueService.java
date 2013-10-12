@@ -34,4 +34,8 @@ public class IssueService {
 	public List<Issue> getAllIssuesWithoutPictures() {
 		return _issueRepository.findAllWithoutPictures();
 	}
+
+	public Issue getIssueById(String id) {
+		return _issueRepository.findOne(id);
+	}
 }
