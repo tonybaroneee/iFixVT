@@ -20,3 +20,16 @@ html, body {
     width: 130px;
     padding: 5px 12px;
 }
+
+div.marker-delete-wrapper {
+    position: relative;
+    right: 5px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+a#marker-delete-btn {
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}

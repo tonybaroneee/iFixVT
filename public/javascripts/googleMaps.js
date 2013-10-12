@@ -119,7 +119,9 @@ function attachMarkerInfo(marker, number) {
             var popupContent = "";
             popupContent += (data.image) ? "<img id='popup-info-image' src='"+data.image+"' />" : "";
             popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>"+issueTypeMap[data.issueTypeId].description + " in " + data.townName + "</div>" : "";
-
+            if(data.image || data.issueTypeId) {
+                popupContent += "<div class='marker-delete-wrapper'><a href='#' id='marker-delete-btn' onclick='deleteIssue(\""+marker.id+"\");'>Resolve Issue</a></div>";
+            }
             var infowindow = new google.maps.InfoWindow(
                 {
                     content: data.image || data.issueTypeId ? popupContent : "<b>No image available</b>",
@@ -130,6 +132,17 @@ function attachMarkerInfo(marker, number) {
         });
 
     });
+}
+
+function deleteIssue(id) {
+    $.ajax({
+        url: '/issue/delete/'+id,
+        data: { },
+        type: 'get',
+        dataType: 'json'
+    });
+    removeMarker(id);
+
 }
 
 function initialize() {
@@ -276,6 +289,15 @@ function clearMarkers() {
             for (var i = 0; i < markersArray.length; i++ ) {
                 markersArray[i].setMap(null);
             }
+    }
+}
+
+function removeMarker(id) {
+    if(markersArray) {
+        for (var i = 0; i < markersArray.length; i++ ) {
+            if(markersArray[i].id == id)
+                markersArray[i].setMap(null);
+        }
     }
 }
 
