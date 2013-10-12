@@ -31,12 +31,10 @@ app.directive('fileButton', function() {
 });
 app.controller('AddIssueController', ['$scope', '$http', function($scope, $http) {
     $scope.locationSet = false;
-    $scope.coords = {
-        lat: 0,
-        long: 0
-    };
+    $scope.coords = {};
     $scope.imageData = '';
     $scope.type = '';
+    $scope.filedata = '';
 
     $scope.setLocation = function() {
         navigator.geolocation.getCurrentPosition(function(pos) {
@@ -52,38 +50,34 @@ app.controller('AddIssueController', ['$scope', '$http', function($scope, $http)
     $scope.setLocation();
 
     $scope.onFileSelect = function($files) {
-        //$files: an array of files selected, each file has name, size, and type.
-        var FR= new FileReader();
-        FR.onload = function(e) {
-            $scope.$apply(function() {
-                $scope.imageData = e.target.result;
-                console.log($scope.imageData);
-            });
-        };
-        FR.readAsDataURL($files.files[0]);
-//        for (var i = 0; i < $files.length; i++) {
-//            var $file = $files[i];
-//            $http.uploadFile({
-//                url: 'server/upload/url', //upload.php script, node.js route, or servlet upload url)
-//                data: {myObj: $scope.myModelObj},
-//                file: $file
-//            }).then(function(data, status, headers, config) {
-//                // file is uploaded successfully
-//                console.log(data);
-//            });
-//        }
+        var file = $files.files[0];
+        canvasResize(file, {
+            width:  0,
+            height: 300,
+            crop: false,
+            quality: 80,
+            //rotate: 90,
+            callback: function(data, width, height) {
+                $scope.$apply(function() {
+                    $scope.imageData = data;
+                });
+            }
+        });
     };
 
     $scope.saveIssue = function() {
-//        console.log($scope.type);
-        $http.post('/save', {
-            lat: $scope.coords.lat,
-            long: $scope.coords.long,
-            picture: $scope.imageData,
-            type: angular.element("#type").val()
-        }).success(function(data, status, headers, config) {
-        // file is uploaded successfully
-        console.log(data);
+        $.ajax({
+            url: '/issue/save',
+            data: {
+                lat: $scope.coords.lat,
+                long: $scope.coords.long,
+                picture: $scope.imageData,
+                type: angular.element("#type").val()
+            },
+            type: 'post'
+        }).done(function(data) {
+            // file is uploaded successfully
+            console.log(data);
         });
     };
 }]);
