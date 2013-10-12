@@ -1,6 +1,16 @@
 package db.models;
 
+import javax.persistence.Id;
+
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+@TypeAlias("Town")
 public class Town {
+	
+	@Id
+	private String id;
 	private String name;
 	private Double area;
 	private Double density;

@@ -1,1784 +1,1784 @@
-db.Town.insert([
+db.town.insert([
   {
-    "rank":1,
+	  "_class":"Town",
     "name":"Burlington",
     "population":38889,
     "area":15.48,
     "density":2512.2
   },
   {
-    "rank":2,
+	  "_class":"Town",
     "name":"Essex",
     "population":18626,
     "area":39.4,
     "density":472.7
   },
   {
-    "rank":3,
+	  "_class":"Town",
     "name":"Rutland",
     "population":17292,
     "area":7.67,
     "density":2254.5
   },
   {
-    "rank":4,
+	  "_class":"Town",
     "name":"Colchester",
     "population":16986,
     "area":60.3,
     "density":281.7
   },
   {
-    "rank":5,
+	  "_class":"Town",
     "name":"South Burlington",
     "population":15814,
     "area":30.92,
     "density":511.4
   },
   {
-    "rank":6,
+	  "_class":"Town",
     "name":"Bennington",
     "population":15737,
     "area":42.27,
     "density":372.3
   },
   {
-    "rank":7,
+	  "_class":"Town",
     "name":"Brattleboro",
     "population":12005,
     "area":32.63,
     "density":367.9
   },
   {
-    "rank":8,
+    "_class":"Town",
     "name":"Hartford",
     "population":10367,
     "area":46,
     "density":225.4
   },
   {
-    "rank":9,
+    "_class":"Town",
     "name":"Milton",
     "population":9479,
     "area":60.98,
     "density":155.4
   },
   {
-    "rank":10,
+    "_class":"Town",
     "name":"Barre",
     "population":9291,
     "area":4.03,
     "density":2305.5
   },
   {
-    "rank":11,
+    "_class":"Town",
     "name":"Springfield",
     "population":9078,
     "area":49.6,
     "density":183
   },
   {
-    "rank":12,
+    "_class":"Town",
     "name":"Middlebury",
     "population":8183,
     "area":39.69,
     "density":206.2
   },
   {
-    "rank":13,
+    "_class":"Town",
     "name":"Montpelier",
     "population":8035,
     "area":10.26,
     "density":783.1
   },
   {
-    "rank":14,
+    "_class":"Town",
     "name":"Williston",
     "population":7650,
     "area":31.1,
     "density":246
   },
   {
-    "rank":15,
+    "_class":"Town",
     "name":"St. Albans",
     "population":7650,
     "area":1.99,
     "density":3844.2
   },
   {
-    "rank":16,
+    "_class":"Town",
     "name":"Barre Town",
     "population":7602,
     "area":30.73,
     "density":247.4
   },
   {
-    "rank":17,
+    "_class":"Town",
     "name":"St. Johnsbury",
     "population":7571,
     "area":36.85,
     "density":205.5
   },
   {
-    "rank":18,
+    "_class":"Town",
     "name":"Shelburne",
     "population":6944,
     "area":43.67,
     "density":159
   },
   {
-    "rank":19,
+    "_class":"Town",
     "name":"Winooski",
     "population":6561,
     "area":1.39,
     "density":4720.1
   },
   {
-    "rank":20,
+    "_class":"Town",
     "name":"Swanton",
     "population":6203,
     "area":61.68,
     "density":100.6
   },
   {
-    "rank":21,
+    "_class":"Town",
     "name":"Northfield",
     "population":5791,
     "area":44.82,
     "density":129.2
   },
   {
-    "rank":22,
+    "_class":"Town",
     "name":"Lyndon",
     "population":5448,
     "area":39.69,
     "density":137.3
   },
   {
-    "rank":23,
+    "_class":"Town",
     "name":"Rockingham",
     "population":5309,
     "area":42.11,
     "density":126.1
   },
   {
-    "rank":24,
+    "_class":"Town",
     "name":"Morristown",
     "population":5139,
     "area":51.29,
     "density":100.2
   },
   {
-    "rank":25,
+    "_class":"Town",
     "name":"St. Albans Town",
     "population":5086,
     "area":60.81,
     "density":83.6
   },
   {
-    "rank":26,
+    "_class":"Town",
     "name":"Jericho",
     "population":5015,
     "area":35.56,
     "density":141
   },
   {
-    "rank":27,
+    "_class":"Town",
     "name":"Newport",
     "population":5005,
     "area":7.78,
     "density":643.3
   },
   {
-    "rank":28,
+    "_class":"Town",
     "name":"Waterbury",
     "population":4915,
     "area":50.38,
     "density":97.6
   },
   {
-    "rank":29,
+    "_class":"Town",
     "name":"Randolph",
     "population":4853,
     "area":48.12,
     "density":100.9
   },
   {
-    "rank":30,
+    "_class":"Town",
     "name":"Derby",
     "population":4604,
     "area":57.12,
     "density":80.6
   },
   {
-    "rank":31,
+    "_class":"Town",
     "name":"Georgia",
     "population":4375,
     "area":45.31,
     "density":96.6
   },
   {
-    "rank":32,
+    "_class":"Town",
     "name":"Castleton",
     "population":4367,
     "area":42.33,
     "density":103.2
   },
   {
-    "rank":33,
+    "_class":"Town",
     "name":"Hinesburg",
     "population":4340,
     "area":39.85,
     "density":108.9
   },
   {
-    "rank":34,
+    "_class":"Town",
     "name":"Stowe",
     "population":4339,
     "area":73.14,
     "density":59.3
   },
   {
-    "rank":35,
+    "_class":"Town",
     "name":"Manchester",
     "population":4180,
     "area":42.08,
     "density":99.3
   },
   {
-    "rank":36,
+    "_class":"Town",
     "name":"Richmond",
     "population":4090,
     "area":32.75,
     "density":124.9
   },
   {
-    "rank":37,
+    "_class":"Town",
     "name":"Rutland Town",
     "population":4038,
     "area":19.58,
     "density":206.2
   },
   {
-    "rank":38,
+    "_class":"Town",
     "name":"Brandon",
     "population":3917,
     "area":39.95,
     "density":98
   },
   {
-    "rank":39,
+    "_class":"Town",
     "name":"Bristol",
     "population":3788,
     "area":41.21,
     "density":91.9
   },
   {
-    "rank":40,
+    "_class":"Town",
     "name":"Shaftsbury",
     "population":3767,
     "area":43.05,
     "density":87.5
   },
   {
-    "rank":41,
+    "_class":"Town",
     "name":"Fairfax",
     "population":3765,
     "area":40.4,
     "density":93.2
   },
   {
-    "rank":42,
+    "_class":"Town",
     "name":"Windsor",
     "population":3756,
     "area":19.77,
     "density":190
   },
   {
-    "rank":43,
+    "_class":"Town",
     "name":"Poultney",
     "population":3633,
     "area":44.64,
     "density":81.4
   },
   {
-    "rank":44,
+    "_class":"Town",
     "name":"Charlotte",
     "population":3569,
     "area":50.38,
     "density":70.8
   },
   {
-    "rank":45,
+    "_class":"Town",
     "name":"Pownal",
     "population":3560,
     "area":47.4,
     "density":75.1
   },
   {
-    "rank":46,
+    "_class":"Town",
     "name":"Norwich",
     "population":3544,
     "area":44.86,
     "density":79
   },
   {
-    "rank":47,
+    "_class":"Town",
     "name":"Highgate",
     "population":3397,
     "area":59.82,
     "density":56.8
   },
   {
-    "rank":48,
+    "_class":"Town",
     "name":"Johnson",
     "population":3274,
     "area":45.21,
     "density":72.4
   },
   {
-    "rank":49,
+    "_class":"Town",
     "name":"Woodstock",
     "population":3232,
     "area":44.37,
     "density":72.8
   },
   {
-    "rank":50,
+    "_class":"Town",
     "name":"Williamstown",
     "population":3225,
     "area":40.33,
     "density":80
   },
   {
-    "rank":51,
+    "_class":"Town",
     "name":"Hartland",
     "population":3223,
     "area":45.28,
     "density":71.2
   },
   {
-    "rank":52,
+    "_class":"Town",
     "name":"Westminster",
     "population":3210,
     "area":45.24,
     "density":71
   },
   {
-    "rank":53,
+    "_class":"Town",
     "name":"Cambridge",
     "population":3186,
     "area":63.48,
     "density":50.2
   },
   {
-    "rank":54,
+    "_class":"Town",
     "name":"Hardwick",
     "population":3174,
     "area":38.66,
     "density":82.1
   },
   {
-    "rank":55,
+    "_class":"Town",
     "name":"Pittsford",
     "population":3140,
     "area":43.45,
     "density":72.3
   },
   {
-    "rank":56,
+    "_class":"Town",
     "name":"Chester",
     "population":3044,
     "area":55.9,
     "density":54.5
   },
   {
-    "rank":57,
+    "_class":"Town",
     "name":"Underhill",
     "population":2980,
     "area":51.29,
     "density":58.1
   },
   {
-    "rank":58,
+    "_class":"Town",
     "name":"Fair Haven",
     "population":2928,
     "area":18.22,
     "density":160.7
   },
   {
-    "rank":59,
+    "_class":"Town",
     "name":"Berlin",
     "population":2864,
     "area":36.71,
     "density":78
   },
   {
-    "rank":60,
+    "_class":"Town",
     "name":"Hyde Park",
     "population":2847,
     "area":39,
     "density":73
   },
   {
-    "rank":61,
+    "_class":"Town",
     "name":"Clarendon",
     "population":2811,
     "area":31.5,
     "density":89.2
   },
   {
-    "rank":62,
+    "_class":"Town",
     "name":"Enosburgh",
     "population":2788,
     "area":48.32,
     "density":57.7
   },
   {
-    "rank":63,
+    "_class":"Town",
     "name":"Weathersfield",
     "population":2788,
     "area":44.02,
     "density":63.3
   },
   {
-    "rank":64,
+    "_class":"Town",
     "name":"Barton",
     "population":2780,
     "area":44.36,
     "density":62.7
   },
   {
-    "rank":65,
+    "_class":"Town",
     "name":"Vergennes",
     "population":2741,
     "area":2.5,
     "density":1096.4
   },
   {
-    "rank":66,
+    "_class":"Town",
     "name":"Ferrisburgh",
     "population":2657,
     "area":61.24,
     "density":43.4
   },
   {
-    "rank":67,
+    "_class":"Town",
     "name":"Putney",
     "population":2634,
     "area":26.7,
     "density":98.7
   },
   {
-    "rank":68,
+    "_class":"Town",
     "name":"Bradford",
     "population":2619,
     "area":29.93,
     "density":87.5
   },
   {
-    "rank":69,
+    "_class":"Town",
     "name":"Thetford",
     "population":2617,
     "area":44.43,
     "density":58.9
   },
   {
-    "rank":70,
+    "_class":"Town",
     "name":"Royalton",
     "population":2603,
     "area":40.85,
     "density":63.7
   },
   {
-    "rank":71,
+    "_class":"Town",
     "name":"East Montpelier",
     "population":2578,
     "area":31.99,
     "density":80.6
   },
   {
-    "rank":72,
+    "_class":"Town",
     "name":"West Rutland",
     "population":2535,
     "area":17.87,
     "density":141.9
   },
   {
-    "rank":73,
+    "_class":"Town",
     "name":"Ludlow",
     "population":2449,
     "area":36.02,
     "density":68
   },
   {
-    "rank":74,
+    "_class":"Town",
     "name":"Arlington",
     "population":2397,
     "area":42.23,
     "density":56.8
   },
   {
-    "rank":75,
+    "_class":"Town",
     "name":"Richford",
     "population":2321,
     "area":43.24,
     "density":53.7
   },
   {
-    "rank":76,
+    "_class":"Town",
     "name":"Wallingford",
     "population":2274,
     "area":43.05,
     "density":52.8
   },
   {
-    "rank":77,
+    "_class":"Town",
     "name":"Wilmington",
     "population":2225,
     "area":42.46,
     "density":52.4
   },
   {
-    "rank":78,
+    "_class":"Town",
     "name":"Danville",
     "population":2211,
     "area":61.02,
     "density":36.2
   },
   {
-    "rank":79,
+    "_class":"Town",
     "name":"Vernon",
     "population":2141,
     "area":20.11,
     "density":106.5
   },
   {
-    "rank":80,
+    "_class":"Town",
     "name":"Westford",
     "population":2086,
     "area":39.11,
     "density":53.3
   },
   {
-    "rank":81,
+    "_class":"Town",
     "name":"Guilford",
     "population":2046,
     "area":39.58,
     "density":51.7
   },
   {
-    "rank":82,
+    "_class":"Town",
     "name":"Dorset",
     "population":2036,
     "area":47.5,
     "density":42.9
   },
   {
-    "rank":83,
+    "_class":"Town",
     "name":"Sheldon",
     "population":1990,
     "area":39.34,
     "density":50.6
   },
   {
-    "rank":84,
+    "_class":"Town",
     "name":"Bethel",
     "population":1968,
     "area":45.72,
     "density":43
   },
   {
-    "rank":85,
+    "_class":"Town",
     "name":"Grand Isle",
     "population":1955,
     "area":35.01,
     "density":55.8
   },
   {
-    "rank":86,
+    "_class":"Town",
     "name":"Newbury",
     "population":1955,
     "area":64.53,
     "density":30.3
   },
   {
-    "rank":87,
+    "_class":"Town",
     "name":"Alburgh",
     "population":1952,
     "area":47.52,
     "density":41.1
   },
   {
-    "rank":88,
+    "_class":"Town",
     "name":"Dummerston",
     "population":1915,
     "area":30.93,
     "density":61.9
   },
   {
-    "rank":89,
+    "_class":"Town",
     "name":"Starksboro",
     "population":1898,
     "area":45.56,
     "density":41.7
   },
   {
-    "rank":90,
+    "_class":"Town",
     "name":"Proctor",
     "population":1877,
     "area":7.54,
     "density":248.9
   },
   {
-    "rank":91,
+    "_class":"Town",
     "name":"Huntington",
     "population":1861,
     "area":38.34,
     "density":48.5
   },
   {
-    "rank":92,
+    "_class":"Town",
     "name":"Fairfield",
     "population":1800,
     "area":68.47,
     "density":26.3
   },
   {
-    "rank":93,
+    "_class":"Town",
     "name":"Monkton",
     "population":1759,
     "area":36.27,
     "density":48.5
   },
   {
-    "rank":94,
+    "_class":"Town",
     "name":"Middlesex",
     "population":1729,
     "area":39.79,
     "density":43.5
   },
   {
-    "rank":95,
+    "_class":"Town",
     "name":"Londonderry",
     "population":1709,
     "area":35.97,
     "density":47.5
   },
   {
-    "rank":96,
+    "_class":"Town",
     "name":"South Hero",
     "population":1696,
     "area":46.42,
     "density":36.5
   },
   {
-    "rank":97,
+    "_class":"Town",
     "name":"Barnet",
     "population":1690,
     "area":43.5,
     "density":38.9
   },
   {
-    "rank":98,
+    "_class":"Town",
     "name":"Warren",
     "population":1681,
     "area":40.05,
     "density":42
   },
   {
-    "rank":99,
+    "_class":"Town",
     "name":"Newfane",
     "population":1680,
     "area":40.02,
     "density":42
   },
   {
-    "rank":100,
+    "_class":"Town",
     "name":"New Haven",
     "population":1666,
     "area":41.5,
     "density":40.1
   },
   {
-    "rank":101,
+    "_class":"Town",
     "name":"Waitsfield",
     "population":1659,
     "area":25.92,
     "density":64
   },
   {
-    "rank":102,
+    "_class":"Town",
     "name":"Moretown",
     "population":1653,
     "area":40.22,
     "density":41.1
   },
   {
-    "rank":103,
+    "_class":"Town",
     "name":"Burke",
     "population":1571,
     "area":33.85,
     "density":46.4
   },
   {
-    "rank":104,
+    "_class":"Town",
     "name":"Troy",
     "population":1564,
     "area":36.47,
     "density":42.9
   },
   {
-    "rank":105,
+    "_class":"Town",
     "name":"Calais",
     "population":1529,
     "area":38.55,
     "density":39.7
   },
   {
-    "rank":106,
+    "_class":"Town",
     "name":"Newport Town",
     "population":1511,
     "area":43.56,
     "density":34.7
   },
   {
-    "rank":107,
+    "_class":"Town",
     "name":"Marshfield",
     "population":1496,
     "area":43.72,
     "density":34.2
   },
   {
-    "rank":108,
+    "_class":"Town",
     "name":"Cavendish",
     "population":1470,
     "area":39.64,
     "density":37.1
   },
   {
-    "rank":109,
+    "_class":"Town",
     "name":"Corinth",
     "population":1461,
     "area":48.35,
     "density":30.2
   },
   {
-    "rank":110,
+    "_class":"Town",
     "name":"Wolcott",
     "population":1456,
     "area":39.3,
     "density":37
   },
   {
-    "rank":111,
+    "_class":"Town",
     "name":"Sharon",
     "population":1411,
     "area":40.16,
     "density":35.1
   },
   {
-    "rank":112,
+    "_class":"Town",
     "name":"Dover",
     "population":1410,
     "area":35.85,
     "density":39.3
   },
   {
-    "rank":113,
+    "_class":"Town",
     "name":"Pawlet",
     "population":1394,
     "area":43.03,
     "density":32.4
   },
   {
-    "rank":114,
+    "_class":"Town",
     "name":"Addison",
     "population":1393,
     "area":48.95,
     "density":28.5
   },
   {
-    "rank":115,
+    "_class":"Town",
     "name":"Berkshire",
     "population":1388,
     "area":41.94,
     "density":33.1
   },
   {
-    "rank":116,
+    "_class":"Town",
     "name":"Lunenburg",
     "population":1328,
     "area":45.51,
     "density":29.2
   },
   {
-    "rank":117,
+    "_class":"Town",
     "name":"Tunbridge",
     "population":1309,
     "area":44.79,
     "density":29.2
   },
   {
-    "rank":118,
+    "_class":"Town",
     "name":"Whitingham",
     "population":1298,
     "area":39.14,
     "density":33.2
   },
   {
-    "rank":119,
+    "_class":"Town",
     "name":"Danby",
     "population":1292,
     "area":41.68,
     "density":31
   },
   {
-    "rank":120,
+    "_class":"Town",
     "name":"Duxbury",
     "population":1289,
     "area":42.99,
     "density":30
   },
   {
-    "rank":121,
+    "_class":"Town",
     "name":"Plainfield",
     "population":1286,
     "area":21.09,
     "density":61
   },
   {
-    "rank":122,
+    "_class":"Town",
     "name":"Franklin",
     "population":1268,
     "area":40.93,
     "density":31
   },
   {
-    "rank":123,
+    "_class":"Town",
     "name":"Brighton",
     "population":1260,
     "area":54.34,
     "density":23.2
   },
   {
-    "rank":124,
+    "_class":"Town",
     "name":"Chelsea",
     "population":1250,
     "area":40.03,
     "density":31.2
   },
   {
-    "rank":125,
+    "_class":"Town",
     "name":"Mount Holly",
     "population":1241,
     "area":48.81,
     "density":25.4
   },
   {
-    "rank":126,
+    "_class":"Town",
     "name":"Bridport",
     "population":1235,
     "area":46.32,
     "density":26.7
   },
   {
-    "rank":127,
+    "_class":"Town",
     "name":"Brookfield",
     "population":1222,
     "area":41.32,
     "density":29.6
   },
   {
-    "rank":128,
+    "_class":"Town",
     "name":"Shoreham",
     "population":1222,
     "area":46.13,
     "density":26.5
   },
   {
-    "rank":129,
+    "_class":"Town",
     "name":"Bakersfield",
     "population":1215,
     "area":44.71,
     "density":27.2
   },
   {
-    "rank":130,
+    "_class":"Town",
     "name":"Lincoln",
     "population":1214,
     "area":45.8,
     "density":26.5
   },
   {
-    "rank":131,
+    "_class":"Town",
     "name":"Cabot",
     "population":1213,
     "area":38.41,
     "density":31.6
   },
   {
-    "rank":132,
+    "_class":"Town",
     "name":"Concord",
     "population":1196,
     "area":53.45,
     "density":22.4
   },
   {
-    "rank":133,
+    "_class":"Town",
     "name":"Braintree",
     "population":1194,
     "area":38.56,
     "density":31
   },
   {
-    "rank":134,
+    "_class":"Town",
     "name":"Orwell",
     "population":1185,
     "area":49.73,
     "density":23.8
   },
   {
-    "rank":135,
+    "_class":"Town",
     "name":"Chittenden",
     "population":1182,
     "area":73.57,
     "density":16.1
   },
   {
-    "rank":136,
+    "_class":"Town",
     "name":"Fletcher",
     "population":1179,
     "area":38.46,
     "density":30.7
   },
   {
-    "rank":137,
+    "_class":"Town",
     "name":"Rochester",
     "population":1171,
     "area":57.13,
     "density":20.5
   },
   {
-    "rank":138,
+    "_class":"Town",
     "name":"Eden",
     "population":1152,
     "area":64,
     "density":18
   },
   {
-    "rank":139,
+    "_class":"Town",
     "name":"Ryegate",
     "population":1150,
     "area":36.87,
     "density":31.2
   },
   {
-    "rank":140,
+    "_class":"Town",
     "name":"Townshend",
     "population":1149,
     "area":42.73,
     "density":26.9
   },
   {
-    "rank":141,
+    "_class":"Town",
     "name":"Topsham",
     "population":1142,
     "area":49,
     "density":23.3
   },
   {
-    "rank":142,
+    "_class":"Town",
     "name":"Fayston",
     "population":1141,
     "area":36.51,
     "density":31.3
   },
   {
-    "rank":143,
+    "_class":"Town",
     "name":"Cornwall",
     "population":1136,
     "area":28.74,
     "density":39.5
   },
   {
-    "rank":144,
+    "_class":"Town",
     "name":"Craftsbury",
     "population":1136,
     "area":39.56,
     "density":28.7
   },
   {
-    "rank":145,
+    "_class":"Town",
     "name":"Wells",
     "population":1121,
     "area":23.2,
     "density":48.3
   },
   {
-    "rank":146,
+    "_class":"Town",
     "name":"Shrewsbury",
     "population":1108,
     "area":50.26,
     "density":22
   },
   {
-    "rank":147,
+    "_class":"Town",
     "name":"Waterford",
     "population":1104,
     "area":39.79,
     "density":27.7
   },
   {
-    "rank":148,
+    "_class":"Town",
     "name":"Killington",
     "population":1095,
     "area":47.64,
     "density":23
   },
   {
-    "rank":149,
+    "_class":"Town",
     "name":"Salisbury",
     "population":1090,
     "area":30.1,
     "density":36.2
   },
   {
-    "rank":150,
+    "_class":"Town",
     "name":"Canaan",
     "population":1078,
     "area":33.08,
     "density":32.6
   },
   {
-    "rank":151,
+    "_class":"Town",
     "name":"Irasburg",
     "population":1077,
     "area":40.77,
     "density":26.4
   },
   {
-    "rank":152,
+    "_class":"Town",
     "name":"West Windsor",
     "population":1067,
     "area":24.83,
     "density":43
   },
   {
-    "rank":153,
+    "_class":"Town",
     "name":"Washington",
     "population":1047,
     "area":39.03,
     "density":26.8
   },
   {
-    "rank":154,
+    "_class":"Town",
     "name":"Strafford",
     "population":1045,
     "area":44.26,
     "density":23.6
   },
   {
-    "rank":155,
+    "_class":"Town",
     "name":"Benson",
     "population":1039,
     "area":45.36,
     "density":22.9
   },
   {
-    "rank":156,
+    "_class":"Town",
     "name":"Mendon",
     "population":1028,
     "area":38.01,
     "density":27
   },
   {
-    "rank":157,
+    "_class":"Town",
     "name":"Coventry",
     "population":1014,
     "area":27.94,
     "density":36.3
   },
   {
-    "rank":158,
+    "_class":"Town",
     "name":"Sutton",
     "population":1001,
     "area":38.49,
     "density":26
   },
   {
-    "rank":159,
+    "_class":"Town",
     "name":"Pomfret",
     "population":997,
     "area":39.41,
     "density":25.3
   },
   {
-    "rank":160,
+    "_class":"Town",
     "name":"Montgomery",
     "population":992,
     "area":56.99,
     "density":17.4
   },
   {
-    "rank":161,
+    "_class":"Town",
     "name":"Bridgewater",
     "population":980,
     "area":49.38,
     "density":19.8
   },
   {
-    "rank":162,
+    "_class":"Town",
     "name":"Marlboro",
     "population":978,
     "area":40.72,
     "density":24
   },
   {
-    "rank":163,
+    "_class":"Town",
     "name":"Leicester",
     "population":974,
     "area":21.77,
     "density":44.7
   },
   {
-    "rank":164,
+    "_class":"Town",
     "name":"Bolton",
     "population":971,
     "area":41.35,
     "density":23.5
   },
   {
-    "rank":165,
+    "_class":"Town",
     "name":"Fairlee",
     "population":967,
     "area":21,
     "density":46
   },
   {
-    "rank":166,
+    "_class":"Town",
     "name":"Glover",
     "population":966,
     "area":38.53,
     "density":25.1
   },
   {
-    "rank":167,
+    "_class":"Town",
     "name":"Orange",
     "population":965,
     "area":38.96,
     "density":24.8
   },
   {
-    "rank":168,
+    "_class":"Town",
     "name":"Barnard",
     "population":958,
     "area":48.53,
     "density":19.7
   },
   {
-    "rank":169,
+    "_class":"Town",
     "name":"Jamaica",
     "population":946,
     "area":49.48,
     "density":19.1
   },
   {
-    "rank":170,
+    "_class":"Town",
     "name":"Worcester",
     "population":902,
     "area":38.73,
     "density":23.3
   },
   {
-    "rank":171,
+    "_class":"Town",
     "name":"Charleston",
     "population":895,
     "area":38.53,
     "density":23.2
   },
   {
-    "rank":172,
+    "_class":"Town",
     "name":"Brownington",
     "population":885,
     "area":28.36,
     "density":31.2
   },
   {
-    "rank":173,
+    "_class":"Town",
     "name":"Groton",
     "population":876,
     "area":55.03,
     "density":15.9
   },
   {
-    "rank":174,
+    "_class":"Town",
     "name":"Wardsboro",
     "population":854,
     "area":29.26,
     "density":29.2
   },
   {
-    "rank":175,
+    "_class":"Town",
     "name":"Sunderland",
     "population":850,
     "area":45.55,
     "density":18.7
   },
   {
-    "rank":176,
+    "_class":"Town",
     "name":"Elmore",
     "population":849,
     "area":39.5,
     "density":21.5
   },
   {
-    "rank":177,
+    "_class":"Town",
     "name":"Albany",
     "population":840,
     "area":38.98,
     "density":21.5
   },
   {
-    "rank":178,
+    "_class":"Town",
     "name":"Weybridge",
     "population":824,
     "area":17.57,
     "density":46.9
   },
   {
-    "rank":179,
+    "_class":"Town",
     "name":"Middletown Springs",
     "population":823,
     "area":22.87,
     "density":36
   },
   {
-    "rank":180,
+    "_class":"Town",
     "name":"Stamford",
     "population":813,
     "area":39.59,
     "density":20.5
   },
   {
-    "rank":181,
+    "_class":"Town",
     "name":"North Hero",
     "population":810,
     "area":46,
     "density":17.6
   },
   {
-    "rank":182,
+    "_class":"Town",
     "name":"Woodbury",
     "population":809,
     "area":39.28,
     "density":20.6
   },
   {
-    "rank":183,
+    "_class":"Town",
     "name":"Readsboro",
     "population":809,
     "area":36.28,
     "density":22.3
   },
   {
-    "rank":184,
+    "_class":"Town",
     "name":"Walden",
     "population":782,
     "area":39,
     "density":20.1
   },
   {
-    "rank":185,
+    "_class":"Town",
     "name":"Halifax",
     "population":782,
     "area":39.82,
     "density":19.6
   },
   {
-    "rank":186,
+    "_class":"Town",
     "name":"Greensboro",
     "population":770,
     "area":39.55,
     "density":19.5
   },
   {
-    "rank":187,
+    "_class":"Town",
     "name":"Hubbardton",
     "population":752,
     "area":28.64,
     "density":26.3
   },
   {
-    "rank":188,
+    "_class":"Town",
     "name":"Lowell",
     "population":738,
     "area":56.38,
     "density":13.1
   },
   {
-    "rank":189,
+    "_class":"Town",
     "name":"Sheffield",
     "population":727,
     "area":32.82,
     "density":22.2
   },
   {
-    "rank":190,
+    "_class":"Town",
     "name":"West Fairlee",
     "population":726,
     "area":22.79,
     "density":31.9
   },
   {
-    "rank":191,
+    "_class":"Town",
     "name":"Reading",
     "population":707,
     "area":41.65,
     "density":17
   },
   {
-    "rank":192,
+    "_class":"Town",
     "name":"Rupert",
     "population":704,
     "area":44.78,
     "density":15.7
   },
   {
-    "rank":193,
+    "_class":"Town",
     "name":"Winhall",
     "population":702,
     "area":44.52,
     "density":15.8
   },
   {
-    "rank":194,
+    "_class":"Town",
     "name":"St. George",
     "population":698,
     "area":3.66,
     "density":190.7
   },
   {
-    "rank":195,
+    "_class":"Town",
     "name":"Waterville",
     "population":697,
     "area":15.81,
     "density":44.1
   },
   {
-    "rank":196,
+    "_class":"Town",
     "name":"Panton",
     "population":682,
     "area":22.04,
     "density":30.9
   },
   {
-    "rank":197,
+    "_class":"Town",
     "name":"Stockbridge",
     "population":674,
     "area":46.05,
     "density":14.6
   },
   {
-    "rank":198,
+    "_class":"Town",
     "name":"Morgan",
     "population":669,
     "area":34.12,
     "density":19.6
   },
   {
-    "rank":199,
+    "_class":"Town",
     "name":"Peacham",
     "population":665,
     "area":47.72,
     "density":13.9
   },
   {
-    "rank":200,
+    "_class":"Town",
     "name":"Grafton",
     "population":649,
     "area":38.21,
     "density":17
   },
   {
-    "rank":201,
+    "_class":"Town",
     "name":"Weston",
     "population":630,
     "area":35.56,
     "density":17.7
   },
   {
-    "rank":202,
+    "_class":"Town",
     "name":"Vershire",
     "population":629,
     "area":36.17,
     "density":17.4
   },
   {
-    "rank":203,
+    "_class":"Town",
     "name":"Wheelock",
     "population":621,
     "area":40.02,
     "density":15.5
   },
   {
-    "rank":204,
+    "_class":"Town",
     "name":"Holland",
     "population":588,
     "area":38.7,
     "density":15.2
   },
   {
-    "rank":205,
+    "_class":"Town",
     "name":"Sudbury",
     "population":583,
     "area":22.14,
     "density":26.3
   },
   {
-    "rank":206,
+    "_class":"Town",
     "name":"Roxbury",
     "population":576,
     "area":41.7,
     "density":13.8
   },
   {
-    "rank":207,
+    "_class":"Town",
     "name":"Tinmouth",
     "population":567,
     "area":28.39,
     "density":20
   },
   {
-    "rank":208,
+    "_class":"Town",
     "name":"Ripton",
     "population":556,
     "area":49.37,
     "density":11.3
   },
   {
-    "rank":209,
+    "_class":"Town",
     "name":"Plymouth",
     "population":555,
     "area":48.62,
     "density":11.4
   },
   {
-    "rank":210,
+    "_class":"Town",
     "name":"Westfield",
     "population":503,
     "area":40.01,
     "density":12.6
   },
   {
-    "rank":211,
+    "_class":"Town",
     "name":"Andover",
     "population":496,
     "area":28.9,
     "density":17.2
   },
   {
-    "rank":212,
+    "_class":"Town",
     "name":"Isle La Motte",
     "population":488,
     "area":18.44,
     "density":26.5
   },
   {
-    "rank":213,
+    "_class":"Town",
     "name":"Waltham",
     "population":479,
     "area":9.23,
     "density":51.9
   },
   {
-    "rank":214,
+    "_class":"Town",
     "name":"Newark",
     "population":470,
     "area":37.24,
     "density":12.6
   },
   {
-    "rank":215,
+    "_class":"Town",
     "name":"Brookline",
     "population":467,
     "area":12.96,
     "density":36
   },
   {
-    "rank":216,
+    "_class":"Town",
     "name":"Kirby",
     "population":456,
     "area":24.55,
     "density":18.6
   },
   {
-    "rank":217,
+    "_class":"Town",
     "name":"Ira",
     "population":455,
     "area":21.42,
     "density":21.2
   },
   {
-    "rank":218,
+    "_class":"Town",
     "name":"Pittsfield",
     "population":427,
     "area":20.97,
     "density":20.4
   },
   {
-    "rank":219,
+    "_class":"Town",
     "name":"Jay",
     "population":426,
     "area":34.01,
     "density":12.5
   },
   {
-    "rank":220,
+    "_class":"Town",
     "name":"Peru",
     "population":416,
     "area":37.49,
     "density":11.1
   },
   {
-    "rank":221,
+    "_class":"Town",
     "name":"Woodford",
     "population":414,
     "area":47.52,
     "density":8.7
   },
   {
-    "rank":222,
+    "_class":"Town",
     "name":"Hancock",
     "population":382,
     "area":38.59,
     "density":9.9
   },
   {
-    "rank":223,
+    "_class":"Town",
     "name":"Whiting",
     "population":380,
     "area":13.7,
     "density":27.7
   },
   {
-    "rank":224,
+    "_class":"Town",
     "name":"Sandgate",
     "population":353,
     "area":42.32,
     "density":8.3
   },
   {
-    "rank":225,
+    "_class":"Town",
     "name":"Athens",
     "population":340,
     "area":14.09,
     "density":24.1
   },
   {
-    "rank":226,
+    "_class":"Town",
     "name":"Windham",
     "population":328,
     "area":26.17,
     "density":12.5
   },
   {
-    "rank":227,
+    "_class":"Town",
     "name":"Westmore",
     "population":306,
     "area":37.58,
     "density":8.1
   },
   {
-    "rank":228,
+    "_class":"Town",
     "name":"Granville",
     "population":303,
     "area":50.98,
     "density":5.9
   },
   {
-    "rank":229,
+    "_class":"Town",
     "name":"East Haven",
     "population":301,
     "area":37.3,
     "density":8.1
   },
   {
-    "rank":230,
+    "_class":"Town",
     "name":"Belvidere",
     "population":294,
     "area":32.06,
     "density":9.2
   },
   {
-    "rank":231,
+    "_class":"Town",
     "name":"West Haven",
     "population":278,
     "area":28.76,
     "density":9.7
   },
   {
-    "rank":232,
+    "_class":"Town",
     "name":"Guildhall",
     "population":268,
     "area":32.98,
     "density":8.1
   },
   {
-    "rank":233,
+    "_class":"Town",
     "name":"Bloomfield",
     "population":261,
     "area":40.27,
     "density":6.5
   },
   {
-    "rank":234,
+    "_class":"Town",
     "name":"Baltimore",
     "population":250,
     "area":4.71,
     "density":53.1
   },
   {
-    "rank":235,
+    "_class":"Town",
     "name":"Goshen",
     "population":227,
     "area":20.73,
     "density":11
   },
   {
-    "rank":236,
+    "_class":"Town",
     "name":"Norton",
     "population":214,
     "area":38.76,
     "density":5.5
   },
   {
-    "rank":237,
+    "_class":"Town",
     "name":"Mount Tabor",
     "population":203,
     "area":44.25,
     "density":4.6
   },
   {
-    "rank":238,
+    "_class":"Town",
     "name":"Stannard",
     "population":185,
     "area":12.7,
     "density":14.6
   },
   {
-    "rank":239,
+    "_class":"Town",
     "name":"Landgrove",
     "population":144,
     "area":8.89,
     "density":16.2
   },
   {
-    "rank":240,
+    "_class":"Town",
     "name":"Stratton",
     "population":136,
     "area":46.86,
     "density":2.9
   },
   {
-    "rank":241,
+    "_class":"Town",
     "name":"Brunswick",
     "population":107,
     "area":25.16,
     "density":4.3
   },
   {
-    "rank":242,
+    "_class":"Town",
     "name":"Lemington",
     "population":107,
     "area":35.33,
     "density":3
   },
   {
-    "rank":243,
+    "_class":"Town",
     "name":"Maidstone",
     "population":105,
     "area":32.13,
     "density":3.3
   },
   {
-    "rank":244,
+    "_class":"Town",
     "name":"Victory",
     "population":97,
     "area":43.13,
     "density":2.2
   },
   {
-    "rank":245,
+    "_class":"Town",
     "name":"Searsburg",
     "population":96,
     "area":21.41,
     "density":4.5
   },
   {
-    "rank":246,
+    "_class":"Town",
     "name":"Granby",
     "population":86,
     "area":38.82,
     "density":2.2
   },
   {
-    "rank":247,
+    "_class":"Town",
     "name":"Ferdinand",
     "population":33,
     "area":53.08,
     "density":0.6
   },
   {
-    "rank":248,
+    "_class":"Town",
     "name":"Glastenbury",
     "population":16,
     "area":44.41,
     "density":0.4
   },
   {
-    "rank":249,
+    "_class":"Town",
     "name":"Buels Gore",
     "population":12,
     "area":5,
     "density":2.4
   },
   {
-    "rank":250,
+    "_class":"Town",
     "name":"Warren Gore",
     "population":10,
     "area":10.3,
     "density":1
   },
   {
-    "rank":251,
+    "_class":"Town",
     "name":"Averill",
     "population":8,
     "area":38.37,
     "density":0.2
   },
   {
-    "rank":252,
+    "_class":"Town",
     "name":"Somerset",
     "population":5,
     "area":27.5,
     "density":0.2
   },
   {
-    "rank":253,
+    "_class":"Town",
     "name":"Warners Grant",
     "population":0,
     "area":3.2,
     "density":0
   },
   {
-    "rank":254,
+    "_class":"Town",
     "name":"Lewis",
     "population":0,
     "area":39.02,
     "density":0
   },
   {
-    "rank":255,
+    "_class":"Town",
     "name":"Averys Gore",
     "population":0,
     "area":18.26,
