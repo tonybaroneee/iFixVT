@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -11,6 +14,8 @@ import play.data.Form;
 import play.mvc.Result;
 import service.GoogleService;
 import db.models.Issue;
+import db.models.IssueType;
+import db.repositories.IssueTypeRepository;
 import db.service.IssueService;
 
 @Controller
@@ -23,6 +28,9 @@ public class IssueController extends FixItBaseController {
 
 	@Inject
 	GoogleService _googleService;
+
+	@Inject
+	IssueTypeRepository _issueTypeRepository;
 
 	public Result issueById(String id) {
 		Issue issue = _issueService.getIssueById(id);
@@ -51,4 +59,14 @@ public class IssueController extends FixItBaseController {
 
 		return ok();
 	}
+
+	public Result issueTypeMap() {
+		Map<String, IssueType> issueTypeMap = new HashMap<String, IssueType>();
+		for (IssueType type : _issueTypeRepository.findAll()) {
+			issueTypeMap.put(type.getId(), type);
+		}
+
+		return okAsJSON(issueTypeMap);
+	}
+
 }
