@@ -44,24 +44,10 @@ function loadPointArray() {
                 type: 'get',
                 dataType: 'json'
             }).done(function(data) {
-                    /*var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(44.489,-73.1862390),
-                        map: map,
-                        id: 'id1',
-                        title: "test"
-                    });
-                    attachMarkerInfo(marker, map);
-
-                    var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(44.488,-73.1862390),
-                        map: map,
-                        id: 'id1',
-                        title: "test"
-                    });
-                    attachMarkerInfo(marker, map);*/
-
 
                 for(var x = 0; x < data.length; x++) {
+                    if(!data[x].id)
+                        console.log("null id");
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(data[x].latitude,data[x].longitude),
                         map: map,
@@ -92,7 +78,7 @@ function loadPointArray() {
                 type: 'get',
                 dataType: 'json'
             }).done(function(data) {
-                addHashMapToHeatMap(data);
+                addHashMapToHeatMapByTown(data);
                 finalizeLoading();
             });
             break;
@@ -130,12 +116,16 @@ function attachMarkerInfo(marker, number) {
         }).done(function(data) {
             if(lastInfoWindow)
                 lastInfoWindow.close();
-            lastInfoWindow = infowindow;
+            var popupContent = "";
+            popupContent += (data.image) ? "<img id='popup-info-image' src='"+data.image+"' />" : "";
+            popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>type</div>" : "";
+
             var infowindow = new google.maps.InfoWindow(
                 {
-                    content: data.image ? "<img id='popup-info-image' src='"+data.image+"' /><div id='popup-info-type'></div>" : "<b>No image available</b>",
+                    content: data.image || data.issueTypeId ? popupContent : "<b>No image available</b>",
                     size: new google.maps.Size(1,1)
                 });
+            lastInfoWindow = infowindow;
             infowindow.open(map, marker);
         });
 
@@ -159,12 +149,6 @@ function initialize() {
         toggleHeatmap(false);
     }
 
-    google.maps.event.addListener(map, 'click', function() {
-        // 3 seconds after the center of the map has changed, pan back to the
-        // marker.
-        console.log("Current Center: " + map.getCenter().lb + ", " + map.getCenter().mb + " at Zoom Level -> " + map.getZoom());
-    });
-    //}
     loadPointArray();
 
 } // initialize
@@ -175,12 +159,9 @@ function finalizeLoading() {
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: pointArray
         });
-        /*heatmap.setOptions({
-            radius: null,
-            opacity:.8,
-            dissipating: false
-
-        });*/
+        heatmap.setOptions({
+            radius: 15
+        });
         toggleHeatmap(true);
     }
 
@@ -229,6 +210,16 @@ function addHashMapToHeatMap(data) {
     }
 }
 
+function addHashMapToHeatMapByTown(data) {
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            addPoint(key.split(":")[0],
+                key.split(":")[1],
+                isNumber(data[key]) ? calculateHeatMapByTownSize(data[key]) : null);
+        }
+    }
+}
+
 function addDataToHeatMap(data) {
     for(var x = 0; x < data.length; x++) {
         addPoint(data[x].latitude,
@@ -242,12 +233,17 @@ function calculateRealWeight(weight) {
 }
 
 function calculateBasicHeatMapSize(weight) {
-    return weight * 3;
+    return weight * 5;
+}
+
+function calculateHeatMapByTownSize(weight) {
+    return weight * 10;
 }
 
 function addPoint(lat, long, weightOfPoint) {
-    if(weightOfPoint)
+    if(weightOfPoint) {
         pointArray.push({location: new google.maps.LatLng(lat, long), weight: weightOfPoint});
+    }
     else
         pointArray.push(new google.maps.LatLng(lat,long));
 }
