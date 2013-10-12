@@ -15,11 +15,11 @@ var pointArray;
 var lastInfoWindow = null;
 
 function loadPointArray() {
-
+    // pointArray is used for the heatmaps - so no need to populate it if it's the basic view
     pointArray = new google.maps.MVCArray([]);
     switch(activeView) {
         case views.BASIC:
-            addPoint("44.4899859","-73.1852290");
+            /*addPoint("44.4899859","-73.1852290");
             addPoint("44.4899859","-73.1853400");
             addPoint("44.4899859","-73.1854510");
             addPoint("44.4899859","-73.1855620");
@@ -29,17 +29,24 @@ function loadPointArray() {
             addPoint("44.4899859","-73.1859060");
             addPoint("44.4899859","-73.1860170");
             addPoint("44.4899859","-73.1861280");
-            addPoint("44.4899859","-73.1862390");
-
-            for(var x = 0; x < pointArray.b.length; x++) {
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(pointArray.getAt(x).lb,pointArray.getAt(x).mb),
-                    map: map,
-                    title: 'Marker #' + x
-                });
-                attachMarkerInfo(marker, map);
-            }
-
+            addPoint("44.4899859","-73.1862390");*/
+            $.ajax({
+                url: '/report/basic',
+                data: { },
+                type: 'get',
+                dataType: 'json'
+            }).done(function(data) {
+                for(var x = 0; x < data.length; x++) {
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(data[x].latitude,data[x].longitude),
+                        map: map,
+                        id: data[x].id,
+                        title: data[x].description
+                    });
+                    attachMarkerInfo(marker, map);
+                }
+                finalizeLoading();
+            });
             break;
         case views.HEAT_ISSUE_COUNT:
             break;
@@ -54,7 +61,7 @@ function attachMarkerInfo(marker, number) {
     var infowindow = new google.maps.InfoWindow(
         {
             content: "cool",
-            size: new google.maps.Size(300,150)
+            size: new google.maps.Size(1,1)
         });
     google.maps.event.addListener(marker, 'click', function() {
         if(lastInfoWindow)
@@ -62,18 +69,25 @@ function attachMarkerInfo(marker, number) {
         lastInfoWindow = infowindow;
         infowindow.content = '<div class="ui segment" style="width: 100px; height: 100px;"><div class="ui active inverted dimmer"><div class="ui text loader">Loading</div></div></div>';
         infowindow.open(map,marker);
-        /*$.ajax({
-            url: '',
+        $.ajax({
+            url: '/issue/'+marker.id,
             data: { },
             type: 'get',
             dataType: 'json'
         }).done(function(data) {
-            infowindow.content = data;
-        });  //*/
+            if(lastInfoWindow)
+                lastInfoWindow.close();
+            lastInfoWindow = infowindow;
+            var infowindow = new google.maps.InfoWindow(
+                {
+                    content: "<img src='"+data.image+"' />",
+                    size: new google.maps.Size(1,1)
+                });
+            infowindow.open(map, marker);
+        });
 
     });
 }
-
 
 function initialize() {
     var mapOptions = {
@@ -89,6 +103,9 @@ function initialize() {
 
     loadPointArray();
 
+} // initialize
+
+function finalizeLoading() {
     if(activeView != views.BASIC) {
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: pointArray
@@ -102,7 +119,7 @@ function initialize() {
         centerMapOnLocation();
     }
     firstLoad = false;
-} // initialize
+}
 
 function centerMapOnLocation() {
     if(firstLoad) {
