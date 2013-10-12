@@ -32,7 +32,7 @@ public class ReportController extends FixItBaseController {
 
 	@Inject
 	GoogleService _googleService;
-	
+
 	public Result basic() {
 		List<Issue> issues = _issueService.getAllIssuesWithoutPictures();
 		return okAsJSON(issues);
@@ -64,20 +64,21 @@ public class ReportController extends FixItBaseController {
 		HashMap<String, Integer> heatMap = new HashMap<String, Integer>();
 
 		List<Issue> issues = _issueService.getAllIssuesWithoutPictures();
-		
-		Map<String, Town> townNameMap = _townService.getAllTownNamesMap(); 
-		
+
+		Map<String, Town> townNameMap = _townService.getAllTownNamesMap();
+
 		for (Issue issue : issues) {
 			String townName = issue.getTownName();
-			
-			double lat = townNameMap.get(townName).getLatitude();
-			double lng = townNameMap.get(townName).getLongitude();
+			if (townName != null) {
+				double lat = townNameMap.get(townName).getLatitude();
+				double lng = townNameMap.get(townName).getLongitude();
 
-			String key = lat + ":" + lng;
-			if (!heatMap.containsKey(key)) {
-				heatMap.put(key, 1);
-			} else {
-				heatMap.put(key, heatMap.get(key) + 1);
+				String key = lat + ":" + lng;
+				if (!heatMap.containsKey(key)) {
+					heatMap.put(key, 1);
+				} else {
+					heatMap.put(key, heatMap.get(key) + 1);
+				}
 			}
 		}
 		return okAsJSON(heatMap);
