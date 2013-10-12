@@ -21,7 +21,6 @@ public class Application extends FixItBaseController {
 	IssueService _issueService;
 
 	public Result index() {
-		
 		Issue issue = new Issue();
 		issue.setImageUri("MY URI!!!!");
 		_issueService.save(issue);
