@@ -5,4 +5,8 @@ $(function(){
             .modal('show')
         ;
     });
+
+    $('#view-issues-btn').on('click',function() {
+        addPoint("44.4899859","-73.1852298");
+    });
 });

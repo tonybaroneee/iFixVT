@@ -23,8 +23,7 @@ public class Application extends FixItBaseController {
 	public Result index() {
 		Issue issue = new Issue();
 		issue.setImageUri("MY URI!!!!");
-		_issueService.save(issue);
-		
+
         return ok(index.render());
 	}
 

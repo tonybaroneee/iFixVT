@@ -9,7 +9,7 @@ var taxiData = [];
 function initialize() {
     var mapOptions = {
         zoom: 17,
-        center: new google.maps.LatLng(37.774546, -122.433523),
+        center: new google.maps.LatLng(44.4899859,-73.1852298),
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };
 
@@ -47,7 +47,7 @@ function initialize() {
 } // initialize
 
 function addPoint(lat, long) {
-    pointArray.push(new LatLng(lat,long));
+    pointArray.push(new google.maps.LatLng(lat,long));
 }
 
 function handleNoGeolocation(errorFlag) {
