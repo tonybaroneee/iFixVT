@@ -159,11 +159,11 @@ function initialize() {
         toggleHeatmap(false);
     }
 
-    /*google.maps.event.addListener(map, 'click', function() {
+    google.maps.event.addListener(map, 'click', function() {
         // 3 seconds after the center of the map has changed, pan back to the
         // marker.
         console.log("Current Center: " + map.getCenter().lb + ", " + map.getCenter().mb + " at Zoom Level -> " + map.getZoom());
-    });*/
+    });
     //}
     loadPointArray();
 
@@ -171,9 +171,16 @@ function initialize() {
 
 function finalizeLoading() {
     if(activeView != views.BASIC) {
+
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: pointArray
         });
+        /*heatmap.setOptions({
+            radius: null,
+            opacity:.8,
+            dissipating: false
+
+        });*/
         toggleHeatmap(true);
     }
 
@@ -235,7 +242,7 @@ function calculateRealWeight(weight) {
 }
 
 function calculateBasicHeatMapSize(weight) {
-    return weight * 5;
+    return weight * 3;
 }
 
 function addPoint(lat, long, weightOfPoint) {
@@ -275,35 +282,6 @@ function activateButton(btn) {
     $(btn).addClass("active");
 }
 
-function changeGradient() {
-    var gradient = [
-        'rgba(0, 255, 255, 0)',
-        'rgba(0, 255, 255, 1)',
-        'rgba(0, 191, 255, 1)',
-        'rgba(0, 127, 255, 1)',
-        'rgba(0, 63, 255, 1)',
-        'rgba(0, 0, 255, 1)',
-        'rgba(0, 0, 223, 1)',
-        'rgba(0, 0, 191, 1)',
-        'rgba(0, 0, 159, 1)',
-        'rgba(0, 0, 127, 1)',
-        'rgba(63, 0, 91, 1)',
-        'rgba(127, 0, 63, 1)',
-        'rgba(191, 0, 31, 1)',
-        'rgba(255, 0, 0, 1)'
-    ]
-    heatmap.setOptions({
-        gradient: heatmap.get('gradient') ? null : gradient
-    });
-}
-
-function changeRadius() {
-    heatmap.setOptions({radius: heatmap.get('radius') ? null : 20});
-}
-
-function changeOpacity() {
-    heatmap.setOptions({opacity: heatmap.get('opacity') ? null : 0.2});
-}
 
 function clearMarkers() {
     if(markersArray) {
