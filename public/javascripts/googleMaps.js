@@ -87,12 +87,12 @@ function loadPointArray() {
             break;
         case views.HEAT_ISSUE_BY_TOWN:
             $.ajax({
-                url: '/report/basic',
+                url: '/report/heatMapByTown',
                 data: { },
                 type: 'get',
                 dataType: 'json'
             }).done(function(data) {
-                addDataToHeatMap(data);
+                addHashMapToHeatMap(data);
                 finalizeLoading();
             });
             break;
@@ -133,7 +133,7 @@ function attachMarkerInfo(marker, number) {
             lastInfoWindow = infowindow;
             var infowindow = new google.maps.InfoWindow(
                 {
-                    content: data.image ? "<img src='"+data.image+"' />" : "<b>No image available</b>",
+                    content: data.image ? "<img id='popup-info-image' src='"+data.image+"' /><div id='popup-info-type'></div>" : "<b>No image available</b>",
                     size: new google.maps.Size(1,1)
                 });
             infowindow.open(map, marker);

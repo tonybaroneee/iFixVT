@@ -69,7 +69,7 @@ public class ReportController extends FixItBaseController {
 
 		for (Issue issue : issues) {
 			String townName = issue.getTownName();
-			if (townName != null) {
+			if (townName != null && townNameMap.get(townName) != null) {
 				double lat = townNameMap.get(townName).getLatitude();
 				double lng = townNameMap.get(townName).getLongitude();
 

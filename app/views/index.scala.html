@@ -42,9 +42,9 @@
             <a class="item" id="view-issue-by-town-heat-map">
                 Issues-by-Town Heat Map
             </a>
-            <a class="item" id="view-issue-by-town-density-heat-map">
+            <!--<a class="item" id="view-issue-by-town-density-heat-map">
                 Issues-by-Town Density Heat Map
-            </a>
+            </a>-->
         </div>
         <div class="ui large vertical teal inverted menu">
             <a ng-click="showStats()" class="item">
@@ -68,6 +68,20 @@
                     <i class="certificate icon"></i> By Type
                 </a>
             </div>
+            <table class="ui table segment">
+                <thead>
+                <tr><th>Issue Type</th>
+                    <th>Town</th>
+                    <th>Location</th>
+                </tr></thead>
+                <tbody>
+                <tr ng-repeat="issue in issues">
+                    <td>{{ issue.issueTypeId }}</td>
+                    <td>{{ issue.townName }}</td>
+                    <td>{{ issue.latitude }}, {{ issue.longitude }}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="actions">
             <div class="ui green button" ng-click="closeModal()"><i class="icon check"></i> All Done</div>
