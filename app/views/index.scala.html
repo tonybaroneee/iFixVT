@@ -6,12 +6,24 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
+
     <div id="map-canvas"></div>
-    <h1 id="ifixvt-text">iFixVT</h1>
+
 
     <div id="action-box">
         <div id="report-issue-btn" class="ui green button ifixvt-button"><i class="icon plus"></i>Add Issue</div>
-        <div id="view-issues-btn" class="ui orange button ifixvt-button"><i class="icon map"></i>View Issues</div>
+        <h2 id="views-header">Views</h2>
+        <div class="ui large vertical blue inverted menu" id="google-map-view-box">
+            <a class="active item" id="view-plain-issue-data">
+                Plain Issue Data
+            </a>
+            <a class="item" id="view-issue-count-heat-map">
+                Issue Count Heat Map
+            </a>
+            <a class="item" id="view-issue-density-heat-map">
+                Issue Density Heat Map
+            </a>
+        </div>
     </div>
 
     <div id="add-issue-modal" class="ui modal">

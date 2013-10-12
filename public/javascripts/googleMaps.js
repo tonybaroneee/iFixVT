@@ -18,11 +18,14 @@ function initialize() {
 
     pointArray = new google.maps.MVCArray(taxiData);
 
+    addPoint("44.4899859","-73.1852298");
+    addPoint("44.4899859","-73.1852299");
+    addPoint("44.4899859","-73.1852300");
+    addPoint("44.4899859","-73.1852301");
+
     heatmap = new google.maps.visualization.HeatmapLayer({
         data: pointArray
     });
-
-    heatmap.setMap(map);
 
     // Try HTML5 geolocation
     if(navigator.geolocation) {
@@ -46,8 +49,11 @@ function initialize() {
     }
 } // initialize
 
-function addPoint(lat, long) {
-    pointArray.push(new google.maps.LatLng(lat,long));
+function addPoint(lat, long, weightOfPoint) {
+    if(weightOfPoint)
+        pointArray.push({location: new google.maps.LatLng(lat, long), weight: weightOfPoint});
+    else
+        pointArray.push(new google.maps.LatLng(lat,long));
 }
 
 function handleNoGeolocation(errorFlag) {
@@ -67,8 +73,24 @@ function handleNoGeolocation(errorFlag) {
     map.setCenter(options.position);
 }
 
+
 function toggleHeatmap() {
     heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function turnOnHeatmap() {
+    heatmap.setMap(map);
+}
+
+function turnOffHeatmap() {
+    heatmap.setMap(null);
+}
+
+function activateButton(btn) {
+    $( "#google-map-view-box a.item" ).each(function() {
+        $( this ).removeClass( "active" );
+    });
+    $(btn).addClass("active");
 }
 
 function changeGradient() {

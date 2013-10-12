@@ -6,7 +6,16 @@ $(function(){
         ;
     });
 
-    $('#view-issues-btn').on('click',function() {
-        addPoint("44.4899859","-73.1852298");
+    $('#view-plain-issue-data').on('click',function() {
+        activateButton(this);
     });
+
+    $('#view-issue-count-heat-map').on('click',function() {
+        activateButton(this);
+    });
+
+    $('#view-issue-density-heat-map').on('click',function() {
+        activateButton(this);
+    });
+
 });
