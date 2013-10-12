@@ -31,16 +31,19 @@ app.directive('fileButton', function() {
 });
 
 app.service("IssueService", function() {
-    this.issueTypeMap = {};
+    var that = this;
+    that.issueTypeMap = {};
     $.get('/issue/issueTypeMap', function(data) {
-        this.issueTypeMap = data;
+        that.issueTypeMap = angular.fromJson(data);
     });
+    this.getIssueTypeMap = function() {
+        return that.issueTypeMap;
+    }
 });
 
 app.filter('getTypeName', ['IssueService', function(IssueService) {
     return function(id) {
-        console.log(IssueService.issueTypeMap[id].description);
-        return IssueService.issueTypeMap[id].description
+        return IssueService.getIssueTypeMap()[id].description;
     };
 }]);
 
@@ -54,32 +57,37 @@ app.directive('changeActive', function() {
 });
 
 app.controller('FixItController', ['$scope', function($scope) {
+    $scope.pageLoading = false;
     $scope.town = '';
     $scope.allIssueTableHead = {
 
     };
     $scope.issues = [];
-    $scope.issueTypeMap = {};
-
-    $.get('/issue/issueTypeMap', function(data) {
-        $scope.$apply(function() {
-            $scope.issueTypeMap = data;
-        });
-    });
 
     $scope.onTownChange = function($town) {
         console.log(angular.element($town).attr('data-value'));
     };
 
     $scope.showStats = function() {
-        angular.element('#stats-modal').modal('show');
-
         $.get('/report/basic', function(data) {
             $scope.$apply(function() {
-                console.log(data);
-//                $scope.issues = data;
+                $scope.issues = angular.fromJson(data).slice(0, 14);
+                setTimeout(function() {
+                    angular.element('#stats-modal').modal('show');
+                }, 0);
             });
         });
+    };
+
+    $scope.goToIssue = function(issue) {
+//        $scope.pageLoading = false;
+//        angular.element('#stats-modal').modal('hide');
+        $('.ui.dimmer').trigger('click');
+        setTimeout(function(){
+            map.setCenter(new google.maps.LatLng(issue.latitude, issue.longitude));
+            map.setZoom(15);
+//            openMarkerById(issue.id);
+        },100);
     };
 
     $scope.closeModal = function() {
