@@ -14,6 +14,7 @@ public class Issue {
 	private String issueTypeId;
 	private Double latitude;
 	private Double longitude;
+	private String townName;
 	private String image;
 	private String description;
 
@@ -67,6 +68,14 @@ public class Issue {
 
 	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
+	}
+
+	public String getTownName() {
+		return townName;
+	}
+
+	public void setTownName(String townName) {
+		this.townName = townName;
 	}
 
 }

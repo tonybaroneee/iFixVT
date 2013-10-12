@@ -12,8 +12,6 @@ import db.repositories.IssueTypeRepository;
 /**
  * @author Keith Buel
  * 
- *         Exposes functions to interact with the user collection in the
- *         database
  */
 public class IssueService {
 

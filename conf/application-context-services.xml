@@ -7,7 +7,8 @@
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean class="db.service.IssueService"/>
-	<bean class="service.GoogleService"/>
-	
+	<bean class="db.service.IssueService" />
+	<bean class="db.service.TownService" />
+	<bean class="service.GoogleService" />
+
 </beans>
