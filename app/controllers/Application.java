@@ -30,7 +30,7 @@ public class Application extends FixItBaseController {
         return ok(index.render());
 	}
 
-    public Result addissue() {
+    public Result phone() {
         return ok(phone.render());
     }
     
