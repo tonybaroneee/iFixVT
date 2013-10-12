@@ -1,5 +1,24 @@
+@(towns :List[db.models.Town], issueTypes:List[db.models.IssueType])
+
 @main("iFixVT | Add Issue") {
+    <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/phone.css")'>
+    <style>
+        html, body {
+            background: url('@routes.Assets.at("images/vermont.jpg")') no-repeat center center !important;
+        }
+        .ui.segment.form {
+            margin: 15px !important;
+            background: rgba(255,255,255,0.7);
+            border: .4em solid rgba(255, 255, 255, 0.8);
+        }
+    </style>
+    <img src='@routes.Assets.at("images/vermont.jpg")' style="
+            width: 100%;
+            min-height: 100%;
+            position: absolute;
+            /*-webkit-filter: blur(4px) !important;*/
+            /*filter: blur(4px) !important;*/
+            opacity: 1 !important; /* restore the opacity for that browser */">
 
-    @addissue()
-
+    @addissue(towns, issueTypes)
 }

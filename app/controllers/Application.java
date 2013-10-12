@@ -41,7 +41,7 @@ public class Application extends FixItBaseController {
 	}
 
     public Result phone() {
-        return ok(phone.render());
+        return ok(phone.render(townRepository.findAll(), issueTypeRepository.findAll()));
     }
     
     public Result upload() {
