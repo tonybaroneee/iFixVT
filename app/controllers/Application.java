@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
 import play.mvc.Result;
-import views.html.heatmap;
 import views.html.index;
 
 
@@ -15,10 +14,7 @@ public class Application extends FixItBaseController {
 	private static Logger _logger = LoggerFactory.getLogger(Application.class);
 
 	public Result index() {
-        	return ok(index.render("Your mom's new application is ready."));
+        	return ok(index.render());
 	}
 
-    public Result heatmap() {
-        return ok(heatmap.render());
-    }
 }

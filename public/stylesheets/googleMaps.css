@@ -1,6 +1,7 @@
 div#map-canvas {
     width: 100%;
     height: 100%;
+    background: #000;
 }
 
 div#action-box {
@@ -9,7 +10,6 @@ div#action-box {
     top: 50px;
     padding: 10px;
     background-color: rgba(25,25,25,0.4);
-    border: #333 outset 1px;
 }
 
 .ifixvt-button {
