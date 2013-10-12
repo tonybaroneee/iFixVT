@@ -36,4 +36,8 @@ public class IssueService {
 	public Issue getIssueById(String id) {
 		return _issueRepository.findOne(id);
 	}
+
+	public List<Issue> findIssuesByTownName(String townName) {
+		return _issueRepository.findByTownNameWithoutPictures(townName);
+	}
 }

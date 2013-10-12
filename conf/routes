@@ -9,6 +9,9 @@ GET     /report/basic               @controllers.ReportController.basic()
 GET     /report/basicHeatMap		@controllers.ReportController.basicHeatMap()
 GET		/report/heatMapByTown		@controllers.ReportController.heatMapByTown()
 
+
+GET		/report/issueByTown/:name	@controllers.ReportController.issueByTown(name)
+
 GET     /issue/issueTypeMap			@controllers.IssueController.issueTypeMap()
 
 GET     /issue/:id					@controllers.IssueController.issueById(id)
