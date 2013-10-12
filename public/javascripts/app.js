@@ -57,16 +57,32 @@ app.directive('changeActive', function() {
     }
 });
 
-app.controller('FixItController', ['$scope', function($scope) {
+app.controller('FixItController', ['$scope', 'IssueService', function($scope, IssueService) {
     $scope.pageLoading = false;
     $scope.town = '';
+    $scope.reportType = 'all';
     $scope.allIssueTableHead = {
 
     };
     $scope.issues = [];
+    $scope.issuesByTown = [];
+
+    $scope.setType = function(type) {
+        $scope.reportType = type;
+    };
 
     $scope.onTownChange = function($town) {
-        console.log(angular.element($town).attr('data-value'));
+        setTimeout(function(){
+            $scope.$apply(function() {
+                $scope.town = angular.element("#town").val();
+                $.get('/report/issueByTown/'+angular.element("#town").val(), function(data) {
+                    $scope.$apply(function() {
+                        $scope.issuesByTown = angular.fromJson(data).slice(0, 14);
+                        setTimeout(function(){$('#stats.modal').modal('refresh')},10);
+                    });
+                });
+            });
+        },10);
     };
 
     $scope.showStats = function() {

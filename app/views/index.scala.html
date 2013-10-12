@@ -11,16 +11,6 @@
                 <!--<input type="text" placeholder="Search...">-->
                 <!--<i class="search link icon"></i>-->
                 <!--</div>-->
-                <div class="ui selection dropdown">
-                    <input type="hidden" name="town" id="town" ng-model="town">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">(All Towns)</div>
-                    <div class="menu">
-                        @for(town <- towns) {
-                            <div class="item" ng-click="onTownChange(this)" data-value="@town.getId()">@town.getName()</div>
-                        }
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -58,19 +48,73 @@
 
     <div id="stats-modal" class="ui modal vertical flip">
         <i class="close icon"></i>
-        <div class="header">Report Issue</div>
-        <div class="content">
-            <div change-active class="ui secondary pointing menu">
-                <a class="active item">
-                    All Issues
-                </a>
-                <a class="item">
-                    <i class="home icon"></i> By Town
-                </a>
-                <a class="item">
-                    <i class="certificate icon"></i> By Type
-                </a>
+        <div class="header">Statistics &amp; Reporting</div>
+        <div change-active class="ui secondary pointing menu">
+            <a ng-click="setType('all')" class="active item">
+                All Issues
+            </a>
+            <a ng-click="setType('town')" class="item">
+                <i class="home icon"></i> By Town
+            </a>
+            <a ng-click="setType('type')" class="item">
+                <i class="certificate icon"></i> By Type
+            </a>
+        </div>
+        <div ng-show="reportType == 'all'" class="content">
+            <table class="ui table segment">
+                <thead>
+                <tr><th>Issue Type</th>
+                    <th>Town</th>
+                    <th>Location</th>
+                </tr></thead>
+                <tbody>
+                <tr ng-repeat="issue in issues">
+                    <td>{{ issue.issueTypeId | getTypeName }}</td>
+                    <td>{{ issue.townName }}</td>
+                    <td><a href="#" ng-click="goToIssue(issue)">View on map</a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr><th>Viewing Issues 1-15</th>
+                    <th></th>
+                    <th></th>
+                </tr></tfoot>
+            </table>
+        </div>
+        <div ng-show="reportType == 'town'" class="content">
+            <div class="ui selection dropdown">
+                <input type="hidden" name="town" id="town" ng-model="town" >
+                <i class="dropdown icon"></i>
+                <div class="default text">(All Towns)</div>
+                <div class="menu">
+                    @for(town <- towns) {
+                        <div ng-click="onTownChange(this)" class="item" data-value="@town.getName()">@town.getName()</div>
+                    }
+                </div>
             </div>
+
+            <table class="ui table segment" ng-hide="!town">
+                <thead>
+                <tr><th>Issue Type</th>
+                    <th>Town</th>
+                    <th>Location</th>
+                </tr></thead>
+                <tbody>
+                <tr ng-repeat="issue in issuesByTown">
+                    <td>{{ issue.issueTypeId | getTypeName }}</td>
+                    <td>{{ issue.townName }}</td>
+                    <td><a href="#" ng-click="goToIssue(issue)">View on map</a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr><th>Viewing Issues 1-15</th>
+                    <th></th>
+                    <th></th>
+                </tr></tfoot>
+            </table>
+        </div>
+        <div ng-show="reportType == 'type'" class="content">
+            type
             <table class="ui table segment">
                 <thead>
                 <tr><th>Issue Type</th>

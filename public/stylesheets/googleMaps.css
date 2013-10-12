@@ -4,6 +4,10 @@ div#map-canvas {
     background: #000;
 }
 
+#map-canvas > div > div:last-child {
+    top: 30px !important;
+}
+
 div#action-box {
     position: absolute;
     right: 25px;
