@@ -55,7 +55,7 @@ public class Application extends FixItBaseController {
     	Town town = townRepository.findOneByName("Burlington");
     	
 //    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
-    	return ok(googleService.getTownNameByLatLong(40.714224, -73.961452));
+    	return ok(googleService.getTownNameByLatLong(44.641300, -73.307015));
     }
 
 }
