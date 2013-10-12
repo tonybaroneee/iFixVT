@@ -1,14 +1,20 @@
 <div ng-controller="AddIssueController" class="ui fluid form segment">
-    <div class="two fields">
-        <div class="field">
-            <label>First Name</label>
-            <input placeholder="First Name" type="text">
-        </div>
-        <div class="field">
-            <label>Last Name</label>
-            <input placeholder="Last Name" type="text">
+    <h3 class="ui dividing header"><b>Step 1:</b> <span style="color:#666;">Specify the type of issue</span></h3>
+    <div class="ui selection dropdown">
+        <input type="hidden" name="gender">
+        <i class="dropdown icon"></i>
+        <div class="default text">Gender</div>
+        <div class="menu">
+            <div class="item" data-value="male">Male</div>
+            <div class="item" data-value="female">Female</div>
         </div>
     </div>
+
+    <h3 class="ui dividing header"><b>Step 2:</b> <span style="color:#666;">Where are you?</span></h3>
+    <button ng-click="setLocation()" ng-show="!locationSet" class="ui button">Get my location</button>
+    <p ng-show="locationSet" class="green"><i class="icon check"></i> Location has been set!</p>
+
+    <h3 class="ui dividing header"><b>Step 3:</b> <span style="color:#666;">Set an image</span></h3>
     <input type="file" ng-file-select="onFileSelect($files)" >
-    <div class="ui blue submit button">Submit</div>
+    <button ng-click="saveIssue()" class="ui blue submit button">Submit</button>
 </div>

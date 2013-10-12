@@ -62,9 +62,12 @@ public class Application extends FixItBaseController {
 
     public Result saveIssue() {
     	//int lat, int lng, String picture, String issueType
-        //DynamicForm form = Form.form().bindFromRequest();
-        //int lat = Integer.parseInt(form.get("lat"));
-        //System.out.println(lat);
+        DynamicForm form = Form.form().bindFromRequest();
+        Double coordLat = Double.parseDouble(form.get("lat"));
+        Double coordLong = Double.parseDouble(form.get("long"));
+        String picture = form.get("picture");
+        String type = form.get("type");
+
         return ok();
     }
 }
