@@ -80,7 +80,7 @@ function attachMarkerInfo(marker, number) {
             lastInfoWindow = infowindow;
             var infowindow = new google.maps.InfoWindow(
                 {
-                    content: "<img src='"+data.image+"' />",
+                    content: data.image ? "<img src='"+data.image+"' />" : "<b>No image available</b>",
                     size: new google.maps.Size(1,1)
                 });
             infowindow.open(map, marker);
