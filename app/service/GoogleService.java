@@ -32,22 +32,20 @@ public class GoogleService {
 	
 	private final static Logger log = LoggerFactory.getLogger(GoogleService.class);
 	public static final String GMAPS_URI = "http://www.google.com/maps/api/geocode/json?";
-
+	public static final String MAPQUEST_URI = "http://open.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd%7Cluubnuuan9%2Crl%3Do5-9uygu0&";
 	public String getTownNameByLatLong(Double latitude, Double longitude) {
 		
-		String reverseGeocode = GMAPS_URI + "latlng=" + latitude + "," + longitude + "&sensor=false";
+		String reverseGeocode = MAPQUEST_URI + "location=" + latitude + "," + longitude;
 		String result = getJsonResult(reverseGeocode);
 		if(!"".equals(result)) {
 			ObjectMapper mapper = new ObjectMapper();
 			try {
 				Map<String,Object> userData = mapper.readValue(result, Map.class);
-				List<Map<String, Object>> address = (List<Map<String, Object>>)((List<Map>)userData.get("results")).get(0).get("address_components");
+				List locations = ((List)((List<Map>) userData.get("results")).get(0).get("locations"));
+				Map location = (Map)locations.get(0);
+				String townName = (String)location.get("adminArea5");
 				
-				for(Map<String, Object> map : address) {
-					if(((List<String>)map.get("types")).contains("locality")) {
-						return (String)map.get("long_name");
-					}
-				}
+				return townName;
 			} catch (JsonParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
