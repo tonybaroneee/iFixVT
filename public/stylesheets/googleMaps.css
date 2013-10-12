@@ -7,7 +7,7 @@ div#map-canvas {
 div#action-box {
     position: absolute;
     right: 25px;
-    top: 50px;
+    top: 100px;
     padding: 10px;
     background-color: rgba(25,25,25,0.4);
     border-radius: 4px;
@@ -26,6 +26,13 @@ div.content {
     background: transparent !important;
 }
 
-ifixvt-text {
+h1#ifixvt-text {
+    color:white;
+    height:.6em;
 
+}
+
+h2#views-header {
+    color: white;
+    text-align: center;
 }
