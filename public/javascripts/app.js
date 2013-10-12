@@ -144,7 +144,7 @@ app.controller('AddIssueController', ['$scope', '$http', function($scope, $http)
             type: 'post'
         }).done(function(data) {
             // file is uploaded successfully
-            console.log(data);
+            $('#save-success').modal('show');
         });
     };
 }]);

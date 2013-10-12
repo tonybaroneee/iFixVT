@@ -17,5 +17,15 @@
     <div class="ui menu" style="margin: 0px;border-radius:0px;border-bottom: 1px solid #CCCCCC;">
         <div class="header item"><i class="icon stethoscope"></i>iFix<span style="color:green">VT</span></div>
     </div>
+
+    <div id="save-success" class="ui modal">
+        <i class="close icon"></i>
+        <div class="content" style="padding-bottom:0px;">
+            <h3 style="color: green;margin: 0;line-height: 30px;">Thank you for submitting your issue! We'll get back to you when more action is taken.</h3>
+        </div>
+        <div class="actions">
+            <div class="ui button" ng-click="closeModal()">Close</div>
+        </div>
+    </div>
     @addissue(towns, issueTypes)
 }
