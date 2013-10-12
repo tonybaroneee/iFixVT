@@ -76,7 +76,7 @@
                 </tr></thead>
                 <tbody>
                 <tr ng-repeat="issue in issues">
-                    <td>{{ issue.issueTypeId }}</td>
+                    <td>{{ issue.issueTypeId | getTypeName }}</td>
                     <td>{{ issue.townName }}</td>
                     <td>{{ issue.latitude }}, {{ issue.longitude }}</td>
                 </tr>

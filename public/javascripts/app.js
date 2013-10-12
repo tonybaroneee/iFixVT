@@ -31,16 +31,19 @@ app.directive('fileButton', function() {
 });
 
 app.service("IssueService", function() {
-    this.issueTypeMap = {};
+    var that = this;
+    that.issueTypeMap = {};
     $.get('/issue/issueTypeMap', function(data) {
-        this.issueTypeMap = data;
+        that.issueTypeMap = angular.fromJson(data);
     });
+    this.getIssueTypeMap = function() {
+        return that.issueTypeMap;
+    }
 });
 
 app.filter('getTypeName', ['IssueService', function(IssueService) {
     return function(id) {
-        console.log(IssueService.issueTypeMap[id].description);
-        return IssueService.issueTypeMap[id].description
+        return IssueService.getIssueTypeMap()[id].description;
     };
 }]);
 
@@ -59,13 +62,6 @@ app.controller('FixItController', ['$scope', function($scope) {
 
     };
     $scope.issues = [];
-    $scope.issueTypeMap = {};
-
-    $.get('/issue/issueTypeMap', function(data) {
-        $scope.$apply(function() {
-            $scope.issueTypeMap = data;
-        });
-    });
 
     $scope.onTownChange = function($town) {
         console.log(angular.element($town).attr('data-value'));
@@ -76,8 +72,7 @@ app.controller('FixItController', ['$scope', function($scope) {
 
         $.get('/report/basic', function(data) {
             $scope.$apply(function() {
-                console.log(data);
-//                $scope.issues = data;
+                $scope.issues = angular.fromJson(data).slice(0, 5);
             });
         });
     };
