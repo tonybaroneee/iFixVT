@@ -11,11 +11,20 @@ public class Issue {
 	@Id
 	private String id;
 
-	private IssueType issueType;
+	private String issueTypeId;
 	private Double latitude;
 	private Double longitude;
 	private String imageUri;
-
+	private String description;
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	public Double getLongitude() {
 		return longitude;
 	}
@@ -32,12 +41,12 @@ public class Issue {
 		this.imageUri = imageUri;
 	}
 
-	public IssueType getIssueType() {
-		return issueType;
+	public String getIssueTypeId() {
+		return issueTypeId;
 	}
 
-	public void setIssueType(IssueType issueType) {
-		this.issueType = issueType;
+	public void setIssueType(String issueTypeId) {
+		this.issueTypeId = issueTypeId;
 	}
 
 	public Double getLatitude() {
