@@ -64,22 +64,4 @@ public class Application extends FixItBaseController {
 //    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
     	return ok(googleService.getTownNameByLatLong(44.641300, -73.307015));
     }
-
-    public Result saveIssue() {
-
-        DynamicForm form = Form.form().bindFromRequest();
-        Double coordLat = Double.parseDouble(form.get("lat"));
-        Double coordLong = Double.parseDouble(form.get("long"));
-        String picture = form.get("picture");
-        String type = form.get("type");
-        
-        Issue issue = new Issue();
-        issue.setLatitude(coordLat);
-        issue.setLongitude(coordLong);
-        issue.setImage(picture);
-        issue.setIssueType(type);
-        _issueService.save(issue);
-        
-        return ok();
-    }
 }
