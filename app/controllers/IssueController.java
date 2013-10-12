@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Result;
+import service.GoogleService;
 import db.models.Issue;
 import db.service.IssueService;
 
@@ -20,6 +21,9 @@ public class IssueController extends FixItBaseController {
 	@Inject
 	IssueService _issueService;
 
+	@Inject
+	GoogleService _googleService;
+
 	public Result issueById(String id) {
 		Issue issue = _issueService.getIssueById(id);
 		return okAsJSON(issue);
@@ -28,10 +32,10 @@ public class IssueController extends FixItBaseController {
 	public Result saveIssue() {
 
 		DynamicForm form = Form.form().bindFromRequest();
-        System.out.println(form.get("lat"));
-        System.out.println(form.get("long"));
-        System.out.println(form.get("picture"));
-        System.out.println(form.get("type"));
+		System.out.println(form.get("lat"));
+		System.out.println(form.get("long"));
+		System.out.println(form.get("picture"));
+		System.out.println(form.get("type"));
 		Double coordLat = Double.parseDouble(form.get("lat"));
 		Double coordLong = Double.parseDouble(form.get("long"));
 		String picture = form.get("picture");
@@ -42,6 +46,7 @@ public class IssueController extends FixItBaseController {
 		issue.setLongitude(coordLong);
 		issue.setImage(picture);
 		issue.setIssueType(type);
+		issue.setTownName(_googleService.getTownNameByLatLong(coordLat, coordLong));
 		_issueService.save(issue);
 
 		return ok();
