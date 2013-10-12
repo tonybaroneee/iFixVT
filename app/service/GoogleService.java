@@ -58,7 +58,6 @@ public class GoogleService {
 						return (String)map.get("long_name");
 					}
 				}
-				System.out.println(userData);
 			} catch (JsonParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
