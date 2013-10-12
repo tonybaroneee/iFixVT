@@ -60,12 +60,14 @@ app.directive('changeActive', function() {
 app.controller('FixItController', ['$scope', 'IssueService', function($scope, IssueService) {
     $scope.pageLoading = false;
     $scope.town = '';
+    $scope.currenttype = '';
     $scope.reportType = 'all';
     $scope.allIssueTableHead = {
 
     };
     $scope.issues = [];
     $scope.issuesByTown = [];
+    $scope.issuesByType = [];
 
     $scope.setType = function(type) {
         $scope.reportType = type;
@@ -78,7 +80,19 @@ app.controller('FixItController', ['$scope', 'IssueService', function($scope, Is
                 $.get('/report/issueByTown/'+angular.element("#town").val(), function(data) {
                     $scope.$apply(function() {
                         $scope.issuesByTown = angular.fromJson(data).slice(0, 14);
-                        setTimeout(function(){$('#stats.modal').modal('refresh')},10);
+                    });
+                });
+            });
+        },10);
+    };
+
+    $scope.onIssueTypeChange = function($issuetype) {
+        setTimeout(function(){
+            $scope.$apply(function() {
+                $scope.currenttype = angular.element("#issuetype").val();
+                $.get('/report/issueByType/'+angular.element("#issuetype").val(), function(data) {
+                    $scope.$apply(function() {
+                        $scope.issuesByType = angular.fromJson(data).slice(0, 14);
                     });
                 });
             });

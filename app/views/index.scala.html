@@ -85,7 +85,7 @@
             <div class="ui selection dropdown">
                 <input type="hidden" name="town" id="town" ng-model="town" >
                 <i class="dropdown icon"></i>
-                <div class="default text">(All Towns)</div>
+                <div class="default text">Select a town...</div>
                 <div class="menu">
                     @for(town <- towns) {
                         <div ng-click="onTownChange(this)" class="item" data-value="@town.getName()">@town.getName()</div>
@@ -114,15 +114,25 @@
             </table>
         </div>
         <div ng-show="reportType == 'type'" class="content">
-            type
-            <table class="ui table segment">
+            <div class="ui selection dropdown">
+                <input type="hidden" name="issuetype" id="issuetype" ng-model="issuetype" >
+                <i class="dropdown icon"></i>
+                <div class="default text">Select an issue type...</div>
+                <div class="menu">
+                    @for(issueType <- issueTypes) {
+                        <div class="item" ng-click="onIssueTypeChange(this)" data-value="@issueType.getId()">@issueType.getDescription()</div>
+                    }
+                </div>
+            </div>
+
+            <table class="ui table segment" ng-hide="!currenttype">
                 <thead>
                 <tr><th>Issue Type</th>
                     <th>Town</th>
                     <th>Location</th>
                 </tr></thead>
                 <tbody>
-                <tr ng-repeat="issue in issues">
+                <tr ng-repeat="issue in issuesByType">
                     <td>{{ issue.issueTypeId | getTypeName }}</td>
                     <td>{{ issue.townName }}</td>
                     <td><a href="#" ng-click="goToIssue(issue)">View on map</a></td>
