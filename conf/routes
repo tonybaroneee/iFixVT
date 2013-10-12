@@ -5,6 +5,7 @@
 # Home page
 GET     /                           @controllers.Application.index()
 GET     /phone                      @controllers.Application.phone()
+GET     /report/basic               @controllers.Report.basic()
 
 POST     /saveIssue                  @controllers.Application.saveIssue
 

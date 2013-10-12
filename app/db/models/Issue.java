@@ -14,17 +14,29 @@ public class Issue {
 	private String issueTypeId;
 	private Double latitude;
 	private Double longitude;
-	private String imageUri;
+	private String image;
 	private String description;
-	
+
+	public void setIssueTypeId(String issueTypeId) {
+		this.issueTypeId = issueTypeId;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public Double getLongitude() {
 		return longitude;
 	}
@@ -33,12 +45,12 @@ public class Issue {
 		this.longitude = longitude;
 	}
 
-	public String getImageUri() {
-		return imageUri;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImageUri(String imageUri) {
-		this.imageUri = imageUri;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getIssueTypeId() {

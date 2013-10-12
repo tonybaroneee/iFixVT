@@ -41,18 +41,18 @@ public class Application extends FixItBaseController {
     
     public Result upload() {
     	IssueType issueType = new IssueType();
-    	issueType.setDescription("Abandoned Bicycle");
-    	
+    	issueType.setDescription("homeless person");
+
 //    	issueType = _issueService.saveIssueType(issueType);
     	
     	Issue issue = new Issue();
-    	issue.setImageUri("IMAGEURI");
+    	issue.setImage("image");
     	issue.setIssueType(issueType.getId());
-    	issue.setLatitude(12.2);
-    	issue.setLongitude(222.2);
-    	issue.setDescription("OMG BIKE");
+    	issue.setLatitude(92923.2);
+    	issue.setLongitude(123.2);
+    	issue.setDescription("i dono");
     	
-//    	_issueService.save(issue);
+    	_issueService.save(issue);
     	
     	Town town = townRepository.findOneByName("Burlington");
     	
