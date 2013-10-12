@@ -79,7 +79,7 @@ function loadPointArray() {
                 type: 'get',
                 dataType: 'json'
             }).done(function(data) {
-                addDataToHeatMap(data);
+                addHashMapToHeatMap(data);
                 finalizeLoading();
             });
             break;
@@ -208,16 +208,30 @@ function isNumber(n) {
     return (n && !isNaN(parseFloat(n)) && isFinite(n));
 }
 
+function addHashMapToHeatMap(data) {
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            addPoint(key.split(":")[0],
+                key.split(":")[1],
+                isNumber(data[key]) ? calculateBasicHeatMapSize(data[key]) : null);
+        }
+    }
+}
+
 function addDataToHeatMap(data) {
     for(var x = 0; x < data.length; x++) {
         addPoint(data[x].latitude,
-                data[x].longitude,
+            data[x].longitude,
                 isNumber(data[x].weight) ? calculateRealWeight(data[x].weight) : null);
     }
 }
 
 function calculateRealWeight(weight) {
     return weight;
+}
+
+function calculateBasicHeatMapSize(weight) {
+    return weight * 5;
 }
 
 function addPoint(lat, long, weightOfPoint) {
