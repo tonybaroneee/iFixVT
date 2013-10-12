@@ -14,6 +14,12 @@ var activeView = views.BASIC;
 var pointArray;
 var lastInfoWindow = null;
 
+function changeView(view)  {
+    activeView = view;
+    console.log("Initializing new view: " + view);
+    initialize();
+}
+
 function loadPointArray() {
     // pointArray is used for the heatmaps - so no need to populate it if it's the basic view
     pointArray = new google.maps.MVCArray([]);
@@ -36,6 +42,23 @@ function loadPointArray() {
                 type: 'get',
                 dataType: 'json'
             }).done(function(data) {
+                    /*var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(44.489,-73.1862390),
+                        map: map,
+                        id: 'id1',
+                        title: "test"
+                    });
+                    attachMarkerInfo(marker, map);
+
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(44.488,-73.1862390),
+                        map: map,
+                        id: 'id1',
+                        title: "test"
+                    });
+                    attachMarkerInfo(marker, map);*/
+
+
                 for(var x = 0; x < data.length; x++) {
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(data[x].latitude,data[x].longitude),
@@ -49,10 +72,13 @@ function loadPointArray() {
             });
             break;
         case views.HEAT_ISSUE_COUNT:
+            finalizeLoading();
             break;
         case views.HEAT_ISSUE_BY_TOWN:
+            finalizeLoading();
             break;
         case views.HEAT_ISSUE_BY_TOWN_DENSITY:
+            finalizeLoading();
             break;
     }
 }
@@ -90,10 +116,11 @@ function attachMarkerInfo(marker, number) {
 }
 
 function initialize() {
+    //if(firstLoad) {  // may want to get this working so it doesn't flash when reloading
     var mapOptions = {
-        zoom: 17,
-        center: new google.maps.LatLng(44.4899859,-73.1852298),
-        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: firstLoad ? new google.maps.LatLng(43.77716516064871, -72.39696075703125): map.getCenter(),
         streetViewControl: false,
         mapTypeControl: false
     };
@@ -101,6 +128,12 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
+    google.maps.event.addListener(map, 'click', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        console.log("Current Center: " + map.getCenter().lb + ", " + map.getCenter().mb + " at Zoom Level -> " + map.getZoom());
+    });
+    //}
     loadPointArray();
 
 } // initialize
@@ -122,7 +155,7 @@ function finalizeLoading() {
 }
 
 function centerMapOnLocation() {
-    if(firstLoad) {
+    /*if(firstLoad) {
         // Try HTML5 geolocation
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -143,7 +176,7 @@ function centerMapOnLocation() {
             // Browser doesn't support Geolocation
             handleNoGeolocation(false);
         }
-    }
+    }  */
 }
 
 function addPoint(lat, long, weightOfPoint) {

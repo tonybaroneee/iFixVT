@@ -100,14 +100,23 @@ $(function(){
 
     $('#view-plain-issue-data').on('click',function() {
         activateButton(this);
+        changeView(views.BASIC);
     });
 
     $('#view-issue-count-heat-map').on('click',function() {
         activateButton(this);
+        changeView(views.HEAT_ISSUE_COUNT);
     });
 
-    $('#view-issue-density-heat-map').on('click',function() {
+    $('#view-issue-by-town-heat-map').on('click',function() {
         activateButton(this);
+        changeView(views.HEAT_ISSUE_BY_TOWN);
     });
+
+    $('#view-issue-by-town-density-heat-map').on('click',function() {
+        activateButton(this);
+        changeView(views.HEAT_ISSUE_BY_TOWN_DENSITY);
+    });
+
 
 });
