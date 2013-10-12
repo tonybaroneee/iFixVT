@@ -1,3 +1,4 @@
+@(towns :List[db.models.Town], issueTypes:List[db.models.IssueType])
 @main("Heat Map") {
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=visualization"></script>
     <script type="text/javascript" src='@routes.Assets.at("javascripts/googleMaps.js")'></script>

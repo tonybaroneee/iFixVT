@@ -15,6 +15,7 @@ import views.html.phone;
 import db.models.Issue;
 import db.models.IssueType;
 import db.models.Town;
+import db.repositories.IssueTypeRepository;
 import db.repositories.TownRepository;
 import db.service.IssueService;
 
@@ -30,9 +31,13 @@ public class Application extends FixItBaseController {
 	TownRepository townRepository;
 	
 	@Inject
+	IssueTypeRepository issueTypeRepository;
+	
+	@Inject
 	GoogleService googleService;
 	public Result index() {
-        return ok(index.render());
+		
+        return ok(index.render(townRepository.findAll(), issueTypeRepository.findAll()));
 	}
 
     public Result phone() {
