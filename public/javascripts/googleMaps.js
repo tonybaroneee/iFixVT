@@ -62,7 +62,14 @@ function attachMarkerInfo(marker, number) {
         lastInfoWindow = infowindow;
         infowindow.content = '<div class="ui segment" style="width: 100px; height: 100px;"><div class="ui active inverted dimmer"><div class="ui text loader">Loading</div></div></div>';
         infowindow.open(map,marker);
-
+        /*$.ajax({
+            url: '',
+            data: { },
+            type: 'get',
+            dataType: 'json'
+        }).done(function(data) {
+            infowindow.content = data;
+        });  //*/
 
     });
 }
@@ -72,7 +79,9 @@ function initialize() {
     var mapOptions = {
         zoom: 17,
         center: new google.maps.LatLng(44.4899859,-73.1852298),
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        streetViewControl: false,
+        mapTypeControl: false
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
