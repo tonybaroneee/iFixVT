@@ -10,11 +10,14 @@ div#action-box {
     top: 50px;
     padding: 10px;
     background-color: rgba(25,25,25,0.4);
+    border-radius: 4px;
 }
 
-.ifixvt-button {
+.ui.button.ifixvt-button {
     position: relative;
+    display: block;
+}
+
+#view-issues-btn {
     margin-top: 10px;
-    margin-bottom: 10px;
-    width: 150px;
 }
