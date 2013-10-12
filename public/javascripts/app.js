@@ -7,6 +7,7 @@ app.controller('AddIssueController', ['$scope', '$http', function($scope, $http)
         long: 0
     };
     $scope.imageData = '';
+    $scope.type = '';
 
     $scope.setLocation = function() {
         navigator.geolocation.getCurrentPosition(function(pos) {
