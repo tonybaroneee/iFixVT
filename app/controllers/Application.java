@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
+import play.data.DynamicForm;
+import play.data.Form;
 import play.mvc.Result;
 import service.GoogleService;
 import views.html.index;
@@ -58,4 +60,11 @@ public class Application extends FixItBaseController {
     	return ok(googleService.getTownNameByLatLong(40.714224, -73.961452));
     }
 
+    public Result saveIssue() {
+    	//int lat, int lng, String picture, String issueType
+        //DynamicForm form = Form.form().bindFromRequest();
+        //int lat = Integer.parseInt(form.get("lat"));
+        //System.out.println(lat);
+        return ok();
+    }
 }
