@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-
+	
 import play.mvc.Result;
 import service.GoogleService;
 import views.html.index;
@@ -23,7 +23,7 @@ public class Application extends FixItBaseController {
 	private static Logger _logger = LoggerFactory.getLogger(Application.class);
 
 	@Inject
-	IssueService _issueService;
+	IssueService _issueService;	
 	
 	@Inject
 	TownRepository townRepository;
@@ -60,6 +60,7 @@ public class Application extends FixItBaseController {
     	Town town = townRepository.findOneByName("Burlington");
     	
 //    	return ok("Awesome! " + town.getName() + " has " + town.getPopulation() + " many people");
-    	return ok(googleService.getTownNameByLatLong(44.641300, -73.307015));
+//    	googleService.getLatLngForTowns();
+    	return ok("BLAH");
     }
 }

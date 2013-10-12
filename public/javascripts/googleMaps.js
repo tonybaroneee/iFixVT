@@ -275,14 +275,6 @@ function toggleHeatmap(turnOn) {
         heatmap.setMap(turnOn ? map : null);
 }
 
-function activateButton(btn) {
-    $( "#google-map-view-box a.item" ).each(function() {
-        $( this ).removeClass( "active" );
-    });
-    $(btn).addClass("active");
-}
-
-
 function clearMarkers() {
     if(markersArray) {
             for (var i = 0; i < markersArray.length; i++ ) {

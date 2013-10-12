@@ -15,7 +15,49 @@ public class Town {
 	private Double area;
 	private Double density;
 	private Long population;
+	private Double latitude;
+	private Double longitude;
+	private Double viewPortNorthEastLatitude;
+	private Double viewPortSouthWestLatitude;
+	private Double viewPortSouthWestLongitude;
+	private Double viewPortNorthEastLongitude;
 	
+	public Double getViewPortNorthEastLatitude() {
+		return viewPortNorthEastLatitude;
+	}
+	public void setViewPortNorthEastLatitude(Double viewPortNorthEastLatitude) {
+		this.viewPortNorthEastLatitude = viewPortNorthEastLatitude;
+	}
+	public Double getViewPortSouthWestLatitude() {
+		return viewPortSouthWestLatitude;
+	}
+	public void setViewPortSouthWestLatitude(Double viewPortSouthWestLatitude) {
+		this.viewPortSouthWestLatitude = viewPortSouthWestLatitude;
+	}
+	public Double getViewPortSouthWestLongitude() {
+		return viewPortSouthWestLongitude;
+	}
+	public void setViewPortSouthWestLongitude(Double viewPortSouthWestLongitude) {
+		this.viewPortSouthWestLongitude = viewPortSouthWestLongitude;
+	}
+	public Double getViewPortNorthEastLongitude() {
+		return viewPortNorthEastLongitude;
+	}
+	public void setViewPortNorthEastLongitude(Double viewPortNorthEastLongitude) {
+		this.viewPortNorthEastLongitude = viewPortNorthEastLongitude;
+	}
+	public Double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+	public Double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
 	public String getName() {
 		return name;
 	}

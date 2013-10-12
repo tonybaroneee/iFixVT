@@ -29,6 +29,29 @@ app.directive('fileButton', function() {
         }
     }
 });
+
+app.directive('changeActive', function() {
+    return function (scope, element, attrs) {
+        angular.element(element).find('a').on('click', function() {
+            angular.element(element).find('a').removeClass('active');
+            $(this).addClass('active');
+        });
+    }
+});
+
+app.controller('FixItController', ['$scope', function($scope) {
+    $scope.allIssueTableHead = {
+
+    }
+    $scope.showStats = function() {
+        angular.element('#stats-modal').modal('show');
+
+        $.get('/report/basic', function(data) {
+            console.log(data);
+        });
+    };
+}]);
+
 app.controller('AddIssueController', ['$scope', '$http', function($scope, $http) {
     $scope.locationSet = false;
     $scope.coords = {};
@@ -47,7 +70,7 @@ app.controller('AddIssueController', ['$scope', '$http', function($scope, $http)
     };
 
     // On page load
-    $scope.setLocation();
+//    $scope.setLocation();
 
     $scope.onFileSelect = function($files) {
         var file = $files.files[0];
@@ -93,22 +116,18 @@ $(function(){
     });
 
     $('#view-plain-issue-data').on('click',function() {
-        activateButton(this);
         changeView(views.BASIC);
     });
 
     $('#view-issue-count-heat-map').on('click',function() {
-        activateButton(this);
         changeView(views.HEAT_ISSUE_COUNT);
     });
 
     $('#view-issue-by-town-heat-map').on('click',function() {
-        activateButton(this);
         changeView(views.HEAT_ISSUE_BY_TOWN);
     });
 
     $('#view-issue-by-town-density-heat-map').on('click',function() {
-        activateButton(this);
         changeView(views.HEAT_ISSUE_BY_TOWN_DENSITY);
     });
 
