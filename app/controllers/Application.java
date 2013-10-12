@@ -57,7 +57,7 @@ public class Application extends FixItBaseController {
     	issue.setLongitude(123.2);
     	issue.setDescription("i dono");
     	
-    	_issueService.save(issue);
+    	//_issueService.save(issue);
     	
     	Town town = townRepository.findOneByName("Burlington");
     	
@@ -66,13 +66,20 @@ public class Application extends FixItBaseController {
     }
 
     public Result saveIssue() {
-    	//int lat, int lng, String picture, String issueType
+
         DynamicForm form = Form.form().bindFromRequest();
         Double coordLat = Double.parseDouble(form.get("lat"));
         Double coordLong = Double.parseDouble(form.get("long"));
         String picture = form.get("picture");
         String type = form.get("type");
-
+        
+        Issue issue = new Issue();
+        issue.setLatitude(coordLat);
+        issue.setLongitude(coordLong);
+        issue.setImage(picture);
+        issue.setIssueType(type);
+        _issueService.save(issue);
+        
         return ok();
     }
 }
