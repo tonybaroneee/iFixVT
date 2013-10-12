@@ -3,6 +3,7 @@ name := "iFixVT"
 version := "1.0-SNAPSHOT"
 
 val springVersion = "3.2.0.RELEASE"
+val springDataMongoVersion = "1.1.0.RELEASE"
 
 libraryDependencies ++= Seq(
   javaJdbc,
@@ -13,7 +14,8 @@ libraryDependencies ++= Seq(
   "cglib" % "cglib" % "2.2.2",
   "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.9",
   "org.springframework" % "spring-context" % springVersion,
+  "org.springframework.data" % "spring-data-mongodb" % springDataMongoVersion,
   "org.springframework" % "spring-expression" % springVersion
-)     
+) 
 
 play.Project.playJavaSettings

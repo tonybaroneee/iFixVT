@@ -7,16 +7,6 @@
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<context:annotation-config />
-	<context:component-scan
-		base-package="controllers" />
-
-
-	<import resource="application-context-persistence.xml" />
-
-	<import resource="application-context-services.xml" />
-
-	<!-- Hack to get authentication interceptor to work -->
-<!-- 	<bean class="play.mvc.Security.AuthenticatedAction" /> -->
-
+	<bean class="db.service.IssueService"/>
+	
 </beans>
