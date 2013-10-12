@@ -57,6 +57,8 @@ public class GoogleService {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 		}
 
