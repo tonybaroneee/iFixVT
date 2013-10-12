@@ -6,6 +6,8 @@
 GET     /                           @controllers.Application.index()
 GET     /phone                      @controllers.Application.phone()
 GET     /report/basic               @controllers.ReportController.basic()
+GET     /report/basicHeatMap		@controllers.ReportController.basicHeatMap()
+
 
 GET     /issue/:id					@controllers.IssueController.issueById(id)
 POST    /issue/save		 			@controllers.IssueController.saveIssue

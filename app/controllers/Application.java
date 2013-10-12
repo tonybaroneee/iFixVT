@@ -6,8 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
-import play.data.DynamicForm;
-import play.data.Form;
 import play.mvc.Result;
 import service.GoogleService;
 import views.html.index;

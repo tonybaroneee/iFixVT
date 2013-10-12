@@ -1,6 +1,8 @@
 package controllers;
 
-import java.util.LinkedHashMap;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -21,16 +23,36 @@ public class ReportController extends FixItBaseController {
 
 	@Inject
 	IssueService _issueService;
-	
+
 	@Inject
 	TownRepository townRepository;
 
-    public Result basic() {
-
-    	List<Issue> issues = _issueService.getAllIssuesWithoutPictures();
-    	
-		LinkedHashMap<String, Object> retval = new LinkedHashMap<String, Object>();
-
+	public Result basic() {
+		List<Issue> issues = _issueService.getAllIssuesWithoutPictures();
 		return okAsJSON(issues);
-    }
+	}
+	
+	public Result basicHeatMap() {
+
+		HashMap<String, Integer> heatMap = new HashMap<String, Integer>();
+		
+		List<Issue> issues = _issueService.getAllIssuesWithoutPictures();
+
+		for (Issue issue : issues) {
+			double lat = new BigDecimal(issue.getLatitude()).setScale(3, RoundingMode.FLOOR).doubleValue();
+			double lng = new BigDecimal(issue.getLongitude()).setScale(3, RoundingMode.FLOOR).doubleValue();
+			
+			String key = lat + ":" + lng;
+			if( !heatMap.containsKey(key) ) {
+				heatMap.put(key, 1);
+			} else {
+				heatMap.put(key, heatMap.get(key) + 1);
+			}
+		}
+
+		heatMap.put("45.000:-75.000", 5);
+		
+		return okAsJSON(heatMap);
+	}
 }
+
