@@ -13,6 +13,7 @@ var views = {
 var activeView = views.BASIC;
 var pointArray;
 var lastInfoWindow = null;
+var vermontCenter = new google.maps.LatLng(43.77716516064871, -72.39696075703125);
 
 function changeView(view)  {
     activeView = view;
@@ -72,13 +73,37 @@ function loadPointArray() {
             });
             break;
         case views.HEAT_ISSUE_COUNT:
-            finalizeLoading();
+            $.ajax({
+                url: '/report/basicHeatMap',
+                data: { },
+                type: 'get',
+                dataType: 'json'
+            }).done(function(data) {
+                addDataToHeatMap(data);
+                finalizeLoading();
+            });
             break;
         case views.HEAT_ISSUE_BY_TOWN:
-            finalizeLoading();
+            $.ajax({
+                url: '/report/basic',
+                data: { },
+                type: 'get',
+                dataType: 'json'
+            }).done(function(data) {
+                addDataToHeatMap(data);
+                finalizeLoading();
+            });
             break;
         case views.HEAT_ISSUE_BY_TOWN_DENSITY:
-            finalizeLoading();
+            $.ajax({
+                url: '/report/basic',
+                data: { },
+                type: 'get',
+                dataType: 'json'
+            }).done(function(data) {
+                addDataToHeatMap(data);
+                finalizeLoading();
+            });
             break;
     }
 }
@@ -120,7 +145,7 @@ function initialize() {
     var mapOptions = {
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: firstLoad ? new google.maps.LatLng(43.77716516064871, -72.39696075703125): map.getCenter(),
+        center: firstLoad ? vermontCenter : map.getCenter(),
         streetViewControl: false,
         mapTypeControl: false
     };
@@ -128,11 +153,11 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-    google.maps.event.addListener(map, 'click', function() {
+    /*google.maps.event.addListener(map, 'click', function() {
         // 3 seconds after the center of the map has changed, pan back to the
         // marker.
         console.log("Current Center: " + map.getCenter().lb + ", " + map.getCenter().mb + " at Zoom Level -> " + map.getZoom());
-    });
+    });*/
     //}
     loadPointArray();
 
@@ -177,6 +202,22 @@ function centerMapOnLocation() {
             handleNoGeolocation(false);
         }
     }  */
+}
+
+function isNumber(n) {
+    return (n && !isNaN(parseFloat(n)) && isFinite(n));
+}
+
+function addDataToHeatMap(data) {
+    for(var x = 0; x < data.length; x++) {
+        addPoint(data[x].latitude,
+                data[x].longitude,
+                isNumber(data[x].weight) ? calculateRealWeight(data[x].weight) : null);
+    }
+}
+
+function calculateRealWeight(weight) {
+    return weight;
 }
 
 function addPoint(lat, long, weightOfPoint) {
