@@ -4,7 +4,8 @@
     <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/phone.css")'>
     <style>
         html, body {
-            background: url('@routes.Assets.at("images/vermont.jpg")') no-repeat center center !important;
+            background-image: url('@routes.Assets.at("images/vermont.jpg")')!important;
+            background-size: cover!important;
         }
         .ui.segment.form {
             margin: 15px !important;
@@ -12,13 +13,9 @@
             border: .4em solid rgba(255, 255, 255, 0.8);
         }
     </style>
-    <img src='@routes.Assets.at("images/vermont.jpg")' style="
-            width: 100%;
-            min-height: 100%;
-            position: absolute;
-            /*-webkit-filter: blur(4px) !important;*/
-            /*filter: blur(4px) !important;*/
-            opacity: 1 !important; /* restore the opacity for that browser */">
 
+    <div class="ui menu" style="margin: 0px;border-radius:0px;border-bottom: 1px solid #CCCCCC;">
+        <div class="header item"><i class="icon stethoscope"></i>iFix<span style="color:green">VT</span></div>
+    </div>
     @addissue(towns, issueTypes)
 }
