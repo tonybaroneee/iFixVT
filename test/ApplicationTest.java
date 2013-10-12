@@ -1,29 +1,10 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static org.fest.assertions.Assertions.assertThat;
 
 import javax.inject.Inject;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import org.junit.Test;
 
-import db.models.Issue;
-import db.models.IssueType;
 import db.service.IssueService;
-
-import org.junit.*;
-
-import play.mvc.*;
-import play.test.*;
-import play.data.DynamicForm;
-import play.data.validation.ValidationError;
-import play.data.validation.Constraints.RequiredValidator;
-import play.i18n.Lang;
-import play.libs.F;
-import play.libs.F.*;
-
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
 
 
 /**
@@ -47,21 +28,6 @@ public class ApplicationTest {
 //        Content html = views.html.index.render("Your new application is ready.");
 //        assertThat(contentType(html)).isEqualTo("text/html");
 //        assertThat(contentAsString(html)).contains("Your new application is ready.");
-    }
-    
-    @Test
-    public void insertIssue() {
-    	IssueType issueType = new IssueType();
-    	issueType.setDescription("Abandoned Bicycle");
-    	
-    	Issue issue = new Issue();
-    	issue.setImageUri("IMAGEURI");
-    	issue.setIssueType(issueType);
-    	issue.setLatitude(12.2);
-    	issue.setLongitude(222.2);
-    	issue.setDescription("OMG BIKE");
-    	
-    	issueService.save(issue);
     }
 
 }
