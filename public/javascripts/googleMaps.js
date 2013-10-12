@@ -14,6 +14,7 @@ var activeView = views.BASIC;
 var pointArray;
 var lastInfoWindow = null;
 var vermontCenter = new google.maps.LatLng(43.77716516064871, -72.39696075703125);
+var markersArray = [];
 
 function changeView(view)  {
     activeView = view;
@@ -68,6 +69,7 @@ function loadPointArray() {
                         title: data[x].description
                     });
                     attachMarkerInfo(marker, map);
+                    markersArray.push(marker);
                 }
                 finalizeLoading();
             });
@@ -141,17 +143,21 @@ function attachMarkerInfo(marker, number) {
 }
 
 function initialize() {
-    //if(firstLoad) {  // may want to get this working so it doesn't flash when reloading
-    var mapOptions = {
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: firstLoad ? vermontCenter : map.getCenter(),
-        streetViewControl: false,
-        mapTypeControl: false
-    };
+    if(firstLoad) {  // may want to get this working so it doesn't flash when reloading
+        var mapOptions = {
+            zoom: firstLoad? 8 : map.getZoom(),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: firstLoad ? vermontCenter : map.getCenter(),
+            streetViewControl: false,
+            mapTypeControl: false
+        };
 
-    map = new google.maps.Map(document.getElementById('map-canvas'),
-        mapOptions);
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+    } else {
+        clearMarkers();
+        toggleHeatmap(false);
+    }
 
     /*google.maps.event.addListener(map, 'click', function() {
         // 3 seconds after the center of the map has changed, pan back to the
@@ -169,8 +175,6 @@ function finalizeLoading() {
             data: pointArray
         });
         toggleHeatmap(true);
-    } else {
-        toggleHeatmap(false);
     }
 
     if(firstLoad) {
@@ -301,3 +305,10 @@ function changeOpacity() {
     heatmap.setOptions({opacity: heatmap.get('opacity') ? null : 0.2});
 }
 
+function clearMarkers() {
+    if(markersArray) {
+            for (var i = 0; i < markersArray.length; i++ ) {
+                markersArray[i].setMap(null);
+            }
+    }
+}
