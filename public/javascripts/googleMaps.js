@@ -118,7 +118,7 @@ function attachMarkerInfo(marker, number) {
                 lastInfoWindow.close();
             var popupContent = "";
             popupContent += (data.image) ? "<img id='popup-info-image' src='"+data.image+"' />" : "";
-            popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>type</div>" : "";
+            popupContent += (data.issueTypeId) ? "<div id='popup-info-type'>"+issueTypeMap[data.issueTypeId].description + " in " + data.townName + "</div>" : "";
 
             var infowindow = new google.maps.InfoWindow(
                 {

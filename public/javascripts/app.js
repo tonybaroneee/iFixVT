@@ -35,6 +35,7 @@ app.service("IssueService", function() {
     that.issueTypeMap = {};
     $.get('/issue/issueTypeMap', function(data) {
         that.issueTypeMap = angular.fromJson(data);
+        issueTypeMap = angular.fromJson(data);
     });
     this.getIssueTypeMap = function() {
         return that.issueTypeMap;
